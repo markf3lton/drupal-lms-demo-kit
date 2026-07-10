@@ -1,0 +1,33 @@
+uuid: a0783e0d-fb5e-4ff1-a9bb-d56861b04734
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_course
+    - user.role.lms_teacher
+id: lms_course-teacher
+label: Teacher
+weight: 2
+admin: false
+scope: insider
+global_role: lms_teacher
+group_type: lms_course
+permissions:
+  - 'add students'
+  - 'administer members'
+  - 'delete group'
+  - 'delete group revisions'
+  - 'edit group'
+  - 'grade students'
+  - 'leave group'
+  - 'revert group revisions'
+  - 'take course'
+  - 'update own group_membership relationship'
+  - 'view all group revisions'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group revisions'
+  - 'view group_membership relationship'
+  - 'view latest group version'
+  - 'view own unpublished group'
+  - 'view students'

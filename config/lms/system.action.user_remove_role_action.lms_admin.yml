@@ -1,0 +1,14 @@
+uuid: 67efb2fc-7f47-49fc-8a7c-7029bff65731
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.lms_admin
+  module:
+    - user
+id: user_remove_role_action.lms_admin
+label: 'Remove the LMS Admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: lms_admin

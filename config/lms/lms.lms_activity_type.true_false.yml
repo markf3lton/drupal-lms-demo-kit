@@ -1,0 +1,12 @@
+uuid: dd9470c3-c2cc-4347-b249-c539d6446896
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zcKQahKwYlmCFE5BqzznQuzrols-igaIhWNyGITezeM
+id: true_false
+name: 'True / false'
+description: ''
+pluginId: true_false
+pluginConfiguration: {  }
+defaultMaxScore: 5

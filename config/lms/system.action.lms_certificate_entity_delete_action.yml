@@ -1,0 +1,13 @@
+uuid: 4f50610d-5633-4673-b1ac-c3ad8530c3d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms_certificate_entity
+_core:
+  default_config_hash: 2uGuhcFu_JSo3Zw3clfHZkAYWiAPEQq3O7JmaHygw-Y
+id: lms_certificate_entity_delete_action
+label: 'Delete lms_certificate_entities'
+type: lms_certificate_entity
+plugin: 'entity:delete_action:lms_certificate_entity'
+configuration: {  }

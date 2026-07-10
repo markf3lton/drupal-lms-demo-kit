@@ -1,0 +1,13 @@
+uuid: 065552b7-133f-4889-b167-8f5907cba45e
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms_certificate_entity
+_core:
+  default_config_hash: H_I1tgfjaI5C-WTpX_01WnVGKBNdhFA11ddAXSVn0hk
+id: lms_certificate_entity_save_action
+label: 'Save lms_certificate_entities'
+type: lms_certificate_entity
+plugin: 'entity:save_action:lms_certificate_entity'
+configuration: {  }

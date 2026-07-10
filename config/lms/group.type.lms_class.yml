@@ -1,0 +1,13 @@
+uuid: 72c8b50f-2d11-4b26-87fa-b2de10d66f1a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gFak4H7I_g9xWlbxmnlTlxxc-whGEm-8BzL2NvfzHJc
+id: lms_class
+label: Class
+description: ''
+new_revision: true
+creator_membership: true
+creator_wizard: false
+creator_roles: {  }

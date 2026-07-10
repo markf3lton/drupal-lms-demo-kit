@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: select_multiple_feedback
+name: 'Multiple select with feedback'
+description: 'Multiple select with feedback activity'
+pluginId: select_feedback
+pluginConfiguration:
+  selection_type: multiple
+defaultMaxScore: 5

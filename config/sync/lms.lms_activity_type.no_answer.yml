@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: no_answer
 name: Slide
-description: ''
+description: 'Slide activity'
 pluginId: no_answer
 pluginConfiguration: {  }
 defaultMaxScore: 5

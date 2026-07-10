@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: true_false_feedback
+name: 'True / false with feedback'
+description: 'True or false with feedback activity'
+pluginId: true_false_feedback
+pluginConfiguration: {  }
+defaultMaxScore: 5

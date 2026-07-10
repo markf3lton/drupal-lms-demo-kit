@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 3e30ae7b-85a6-43c8-a8f3-4ac6c0d2b8b5
+  bundle: fill_in_the_blanks_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Complete the hierarchy'
+  created:
+    -
+      value: 1783691289
+  field_distraction_words:
+    -
+      value: classes
+    -
+      value: grades
+  field_feedback_if_correct:
+    -
+      value: '<p>Well done! The correct hierarchy is: <strong>Courses → Lessons → Activities</strong>. Courses hold lessons, and lessons hold activities. Classes are a student management tool that exists outside this hierarchy.</p>'
+      format: filtered_html
+  field_feedback_if_wrong:
+    -
+      value: '<p>The Drupal LMS content hierarchy has three levels: <strong>Courses → Lessons → Activities</strong>. Courses contain lessons; lessons are made up of activities. Classes are not part of this hierarchy — they are groups of students enrolled in a course.</p>'
+      format: filtered_html
+  field_question_text:
+    -
+      value: '<p>Courses contain [lessons], and lessons are made up of [activities].</p>'
+      format: filtered_html

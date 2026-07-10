@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 3420d050-8f51-42c7-b248-4e611cf84993
+  bundle: fill_in_the_blanks_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Complete activity type definitions'
+  created:
+    -
+      value: 1783691289
+  field_distraction_words:
+    -
+      value: true_false
+    -
+      value: select_single
+  field_feedback_if_correct:
+    -
+      value: '<p>Well done! no_answer is a content-only slide with no student interaction (max score 0). free_text_feedback is an open-ended text activity that provides phrase-based feedback after the student submits their answer.</p>'
+      format: filtered_html
+  field_feedback_if_wrong:
+    -
+      value: '<p>no_answer — presents information with no question or scoring. free_text_feedback — the student writes a free-text response; feedback is triggered based on key phrases found (or not found) in the answer.</p>'
+      format: filtered_html
+  field_question_text:
+    -
+      value: '<p>The [no_answer] type presents content without a question, while [free_text_feedback] allows grading open-ended text responses.</p>'
+      format: filtered_html

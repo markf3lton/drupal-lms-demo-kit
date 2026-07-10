@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 1da3db6d-459a-4581-a7b7-426cb63a7c35
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Activity reusability'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>A key design feature of Drupal LMS is that <strong>activities are reusable</strong> across multiple lessons:</p><ol><li data-list-item-id="eb7851431444969a91d32900252a9338f">Create a comprehensive activity <strong>once</strong>.</li><li data-list-item-id="ee97a2ad09cb553f927e6dee8a7370446"><strong>Reference</strong> it within any number of lessons.</li><li data-list-item-id="eb6f8d4f61b17f40608311f65cac53d9d">Configure <strong>context-specific parameters</strong> (such as maximum score) for each instance separately.</li></ol><p>Benefits of this approach:</p><ul><li data-list-item-id="e827988322dc661e7f6a0e0971fc5e2e6">Build a centralised activity library shared across courses.</li><li data-list-item-id="e67d54db497307863f064f9e70efdc6ec">Single-source updates — fix or improve an activity once and the change appears everywhere it is used.</li><li data-list-item-id="e19cf05fb5349db4ee7cb29110d0795a0">Consistent assessment elements across different learning contexts.</li></ul><p><strong>Important:</strong> Because an activity is shared, <strong>changing its content affects every lesson that uses it simultaneously</strong>. If you need a different version of an activity for a specific lesson, <strong>clone it</strong> to create an independent copy first.</p>'
+      format: filtered_html

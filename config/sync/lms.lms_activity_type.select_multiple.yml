@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: select_multiple
 name: 'Multiple select'
-description: ''
+description: 'Multiple select activity'
 pluginId: select
 pluginConfiguration:
   selection_type: multiple

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.field_information
+    - filter.format.filtered_html
+    - lms.lms_activity_type.fields_demo
+  module:
+    - text
+id: lms_activity.fields_demo.field_information
+field_name: field_information
+entity_type: lms_activity
+bundle: fields_demo
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - filtered_html
+field_type: text_long

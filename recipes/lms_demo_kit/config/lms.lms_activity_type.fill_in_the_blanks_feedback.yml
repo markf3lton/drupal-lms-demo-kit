@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: fill_in_the_blanks_feedback
+name: 'Fill in the Blanks with Feedback'
+description: 'Fill in the Blanks with Feedback activity'
+pluginId: fill_in_the_blanks_feedback
+pluginConfiguration: {  }
+defaultMaxScore: 10

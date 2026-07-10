@@ -1,0 +1,3 @@
+allow_to_enter_ungraded: false
+use_revisions: false
+show_editor_reset_button: true

@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: group_relationship
+  uuid: 2bb0d4f3-612a-455e-aa78-00734589322c
+  bundle: lms_course-lms_classes
+  default_langcode: en
+  depends:
+    e681a680-84cb-49de-b553-c24740861ee5: group
+    e522e1d6-67fa-4e57-93b0-3682272a7fa0: group
+default:
+  uid:
+    -
+      target_id: 0
+  gid:
+    -
+      entity: e522e1d6-67fa-4e57-93b0-3682272a7fa0
+  entity_id:
+    -
+      entity: e681a680-84cb-49de-b553-c24740861ee5
+  created:
+    -
+      value: 1783697423
+  path:
+    -
+      alias: ''
+      langcode: en

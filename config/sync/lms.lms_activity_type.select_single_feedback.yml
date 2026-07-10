@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: select_single_feedback
 name: 'Single select with feedback'
-description: ''
+description: 'Single select with feedback activity'
 pluginId: select_feedback
 pluginConfiguration:
   selection_type: single

@@ -6,7 +6,7 @@ _core:
   default_config_hash: zcKQahKwYlmCFE5BqzznQuzrols-igaIhWNyGITezeM
 id: true_false
 name: 'True / false'
-description: ''
+description: 'True or false activity'
 pluginId: true_false
 pluginConfiguration: {  }
 defaultMaxScore: 5

@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: e4a62c7e-f171-43f0-b859-77ca09decb3a
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'What are lessons and how to create them'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Lessons are <strong>collections of activities</strong> that form a coherent learning unit. A lesson can:</p><ul><li data-list-item-id="e8584da69cfe0c859ec72a6e55ef1bfa2">Contain multiple activities of any type</li><li data-list-item-id="e21fd16d3f40c81800566fc2214d65c35">Have settings for timing, scoring, and navigation</li><li data-list-item-id="e13b4af29b5087334e4bbd79ce5c01735">Present activities in a fixed or random order</li><li data-list-item-id="e51d2e34af357d1d892ead3798a1b67e9">Present a random subset of the available activities</li><li data-list-item-id="e478766d74c014593aa7120b5fe07287b">Be required or optional in a course</li><li data-list-item-id="e5a7f27395b8f8f3b3a533ef5a21e113f">Be reused in multiple courses, with custom settings per course</li></ul><p><strong>To create a new lesson:</strong></p><ol><li data-list-item-id="ec5cd4cbac895e7833b63eb5cee18ce47">Go to <strong>Admin &gt; LMS &gt; Lessons</strong> (/admin/lms/lesson)</li><li data-list-item-id="ed4d8548a8747fb2760b5715d50902f62">Click <strong>Add Lesson</strong></li><li data-list-item-id="eff5d0e459bae9e59e2e7795a73fda4a9">Fill in the <strong>Name</strong> and optional <strong>Description</strong></li><li data-list-item-id="e466aef2e4b0a56d9ead2d4fb2adafbf1">Set the lesson options (backwards navigation, randomization)</li><li data-list-item-id="e623605ef6eddad5f64d5f44db33b84b8">Add activities using <strong>Create activity</strong> (new) or <strong>Reference activities</strong> (existing)</li><li data-list-item-id="eb50bfdf78020571222d36b5b556e7b9f">Click <strong>Save</strong></li></ol>'
+      format: filtered_html

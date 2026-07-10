@@ -1,0 +1,69 @@
+_meta:
+  version: '1.0'
+  entity_type: group
+  uuid: e522e1d6-67fa-4e57-93b0-3682272a7fa0
+  bundle: lms_course
+  default_langcode: en
+  depends:
+    7ac26f67-01d8-4399-8312-596b60ff796a: lms_lesson
+    5c3332c4-a3f2-458d-9972-805fe94a20db: lms_lesson
+    141e92f2-5a34-44cb-bb0e-66254e44fecc: lms_lesson
+    2250dcbc-e768-4ac2-87c6-ce1166358e25: lms_lesson
+default:
+  revision_user:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  label:
+    -
+      value: "Course Creator's Guide for Drupal LMS"
+  created:
+    -
+      value: 1783691289
+  path:
+    -
+      alias: ''
+      langcode: en
+  lessons:
+    -
+      entity: 7ac26f67-01d8-4399-8312-596b60ff796a
+      data:
+        required_score: 70
+        mandatory: true
+        auto_repeat_failed: true
+        time_limit: 0
+    -
+      entity: 5c3332c4-a3f2-458d-9972-805fe94a20db
+      data:
+        required_score: 70
+        mandatory: true
+        auto_repeat_failed: true
+        time_limit: 0
+    -
+      entity: 141e92f2-5a34-44cb-bb0e-66254e44fecc
+      data:
+        required_score: 70
+        mandatory: true
+        auto_repeat_failed: true
+        time_limit: 0
+    -
+      entity: 2250dcbc-e768-4ac2-87c6-ce1166358e25
+      data:
+        required_score: 70
+        mandatory: true
+        auto_repeat_failed: true
+        time_limit: 0
+  revisit_mode:
+    -
+      value: true
+  free_navigation:
+    -
+      value: true
+  membership_validation:
+    -
+      value: false

@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 61e17407-6601-40c7-9844-22a996986671
+  bundle: free_text_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Design an introductory lesson structure'
+  created:
+    -
+      value: 1783691289
+  minimum_characters:
+    -
+      value: 60
+  phrase_feedback:
+    -
+      phrase: no_answer|content|information|slide|present|introduce
+      feedback_present: 'Good — you identified the need to present information before asking questions. Starting with no_answer slides to introduce concepts is a key lesson design principle.'
+      feedback_absent: 'Consider how students who are completely new to a topic need to receive information before they can answer questions. What type of activity would you use to present that initial content?'
+    -
+      phrase: feedback|question|interaction|check|practice|assess|test
+      feedback_present: 'Good — you included interactive or assessment elements. Mixing information slides with interactive questions is what makes a lesson engaging and effective.'
+      feedback_absent: 'Think about how you would check that students understood what they just read. What types of activities help you verify comprehension and give students a chance to practise?'
+  question:
+    -
+      value: '<p>You are building an introductory lesson on a topic that students have never encountered before.</p><p>In your own words, describe how you would <strong>organise the activities</strong> in this lesson. What activity types would you use, and why?</p>'
+      format: filtered_html

@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_course
+    - user.role.anonymous
+id: lms_course-anonymous
+label: Anonymous
+weight: 4
+admin: false
+scope: outsider
+global_role: anonymous
+group_type: lms_course
+permissions:
+  - 'view group'

@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 8a605103-dfd6-48fd-897a-0552992baa96
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Lessons — lesson overview'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Welcome to <strong>Lesson 3: Lessons</strong>.</p><p>In this lesson you will learn:</p><ul><li data-list-item-id="ec64473f0672f401a094ee2f60eaa9253">What lessons are and how they relate to activities and courses</li><li data-list-item-id="ebd75ee9a26694119ded7cd18c8341158">How to <strong>create a lesson</strong> in the Drupal LMS admin interface</li><li data-list-item-id="e1b6ce69259e76d95a895e39b4bf1f85f">The <strong>Backwards Navigation</strong> and <strong>Randomization</strong> settings and when to use them</li><li data-list-item-id="e1d742668a88c82ffc20e84c9dbefc9b2">How <strong>lesson scoring</strong> works — the formula, lesson statuses, and the difference between automatic and manual grading</li><li data-list-item-id="ed3c1c7abaf399732bb1a2a4eb1413881">How to <strong>reuse lessons</strong> across multiple courses with per-instance settings</li></ul><p>Lessons are the middle tier of the content hierarchy. Mastering lesson settings gives you fine-grained control over the student experience.</p>'
+      format: filtered_html

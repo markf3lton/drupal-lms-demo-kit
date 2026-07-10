@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: fill_in_the_blanks
+name: 'Drag and drop'
+description: 'Fill in the blanks'
+pluginId: fill_in_the_blanks
+pluginConfiguration: {  }
+defaultMaxScore: 10

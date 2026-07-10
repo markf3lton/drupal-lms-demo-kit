@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: fields_demo
 name: 'Many fields'
-description: ''
+description: 'Many fields activity'
 pluginId: true_false
 pluginConfiguration: {  }
 defaultMaxScore: 1

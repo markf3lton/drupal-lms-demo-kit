@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 04718477-d6a3-49e9-bfd6-e2aac9e88aee
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Where to check student progress and scores'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'The Students tab on the course page'
+      correct: true
+    -
+      answer: 'Admin > LMS > Reports'
+      correct: false
+    -
+      answer: 'Admin > People > Student progress'
+      correct: false
+    -
+      answer: 'The Lessons tab on the course page'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! Click the <strong>Students</strong> tab on the course page to access the progress report for that course. The report lists all enrolled students with their status, score, last activity, and class.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The student progress report is accessed via the <strong>Students tab on the course page</strong>. Navigate to the course page (e.g., through the Courses listing) and click the Students tab to see the report for all enrolled students.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Drupal LMS includes a built-in student progress report for each course. This report shows:</p><ul><li data-list-item-id="e543568128fadfa7b3be06000153666f9">All enrolled students (and their class membership)</li><li data-list-item-id="ef959928b97b17cb667802ca19da20db2">Course completion status for each student</li><li data-list-item-id="e298eab1f8c76d664bb7f3dc4d42ad3b7">Score (where applicable)</li><li data-list-item-id="e772720a57fecf99c1c310139cdb2065c">Last activity timestamp</li></ul><p>The report can be filtered by student name, class, or completion status.</p><p>Where do you go to view this report for a specific course?</p>'
+      format: filtered_html

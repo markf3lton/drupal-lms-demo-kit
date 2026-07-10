@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.true_false_feedback.bool_expected
+    - field.field.lms_activity.true_false_feedback.description
+    - field.field.lms_activity.true_false_feedback.feedback_if_correct
+    - field.field.lms_activity.true_false_feedback.feedback_if_wrong
+    - field.field.lms_activity.true_false_feedback.question
+    - lms.lms_activity_type.true_false_feedback
+  module:
+    - text
+id: lms_activity.true_false_feedback.default
+targetEntityType: lms_activity
+bundle: true_false_feedback
+mode: default
+content:
+  question:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  bool_expected: true
+  description: true
+  feedback_if_correct: true
+  feedback_if_wrong: true
+  name: true
+  uid: true

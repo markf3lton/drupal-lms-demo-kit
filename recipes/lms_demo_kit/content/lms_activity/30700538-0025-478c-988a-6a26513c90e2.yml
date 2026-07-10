@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 30700538-0025-478c-988a-6a26513c90e2
+  bundle: select_multiple_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Lesson parameters when adding to a course'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'Mandatory (student must complete this lesson to progress in the course)'
+      correct: true
+    -
+      answer: 'Auto-repeat if failed (student must retake the lesson if they fail)'
+      correct: true
+    -
+      answer: 'Required score % (minimum percentage to pass the lesson)'
+      correct: true
+    -
+      answer: 'Time limit in minutes (0 = no limit)'
+      correct: true
+  feedback_if_correct:
+    -
+      value: '<p>Correct! All four are per-instance parameters: Mandatory, Auto-repeat if failed, Required score %, and Time limit. This flexibility is what makes lesson reuse so powerful — the same lesson can be a lightweight optional module in one course and a mandatory timed assessment in another.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: "<p>All four options are correct. The parameters you can set per lesson instance are: <strong>Mandatory</strong>, <strong>Auto-repeat if failed</strong>, <strong>Required score %</strong>, and <strong>Time limit</strong>. These are all instance-level — changing them does not affect the lesson's content or how it is used in other courses.</p>"
+      format: filtered_html
+  question:
+    -
+      value: '<p>When adding a lesson to a course, you configure <strong>instance-specific parameters</strong> for that lesson. These settings apply only to this course — the same lesson can have different settings in other courses.</p><p>Which of the following parameters can you set when adding a lesson to a course? Select all that apply.</p>'
+      format: filtered_html

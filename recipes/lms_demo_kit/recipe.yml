@@ -1,0 +1,49 @@
+name: 'LMS Demo Kit'
+description: 'Layers a complete LMS onto an existing Drupal site: course and class group types, activity types with answer plugins, LMS admin/teacher roles, certificates, membership requests, course views, and course navigation blocks. Includes demo course content.'
+type: 'Site'
+install:
+  # Core modules required by the shipped configuration.
+  - block
+  - field
+  - field_ui
+  - file
+  - filter
+  - image
+  - node
+  - options
+  - path
+  - text
+  - toolbar
+  - views
+  # Group ecosystem (courses and classes are group entities).
+  - entity
+  - flexible_permissions
+  - group
+  - state_machine
+  - grequest
+  # Other contrib dependencies.
+  - dynamic_entity_reference
+  - views_bulk_operations
+  # LMS modules.
+  - lms
+  - lms_answer_plugins
+  - lms_classes
+  - lms_certificate
+  - lms_certificate_entity
+  - lms_membership_request
+  - lms_xapi
+  - lms_yaml
+  # Themes the course navigation blocks are placed in.
+  - olivero
+  - claro
+# All configuration in this recipe's config/ directory is imported
+# automatically after the modules above are installed. Content in the
+# content/ directory is created after configuration import.
+config:
+  actions:
+    # Site-owned config is modified via actions rather than shipped as
+    # files, so the recipe applies cleanly to existing sites.
+    system.site:
+      simpleConfigUpdate:
+        name: 'Drupal LMS'
+        page.front: /courses

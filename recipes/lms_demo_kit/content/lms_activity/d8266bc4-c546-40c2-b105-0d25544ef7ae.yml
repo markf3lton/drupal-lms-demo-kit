@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: d8266bc4-c546-40c2-b105-0d25544ef7ae
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Creating a lesson directly from the course form'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'Click "Create lesson" to open a lesson editor in a modal window'
+      correct: true
+    -
+      answer: 'Save the course first, then navigate to Admin > LMS > Lessons to create the lesson'
+      correct: false
+    -
+      answer: 'Use the "Reference lessons" button and select a lesson from the list'
+      correct: false
+    -
+      answer: 'Create the activities first, then bundle them into a lesson'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The "Create lesson" button opens a lesson editor in a modal window. Inside that modal, you can add activities using another nested modal. The entire workflow stays within the course edit page.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The <strong>Create lesson</strong> button in the course form opens a lesson editor in a modal window. Inside the modal you can fill in lesson details and add activities using nested modals. You never need to leave the course form to build a complete new lesson. "Reference lessons" is for adding an <em>existing</em> lesson, not creating a new one.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>You are editing a course and want to add a brand new lesson that does not yet exist, and configure its activities — all without leaving the course edit page.</p><p>How do you do this?</p>'
+      format: filtered_html

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: free_text
+name: 'Text area'
+description: 'Text area activity'
+pluginId: free_text
+pluginConfiguration: {  }
+defaultMaxScore: 5

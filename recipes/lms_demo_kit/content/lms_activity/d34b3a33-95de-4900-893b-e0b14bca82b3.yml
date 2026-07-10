@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: d34b3a33-95de-4900-893b-e0b14bca82b3
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Key features of Drupal LMS'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Drupal LMS offers a rich set of built-in features:</p><ul><li data-list-item-id="e505a0efa6ef5e6c02475baea981a485b"><strong>Course and Class Management</strong>: Build courses with multiple lessons and optionally organise students into cohesive class groups.</li><li data-list-item-id="e710b888cb77d50eb4dd3bd4694fc4799"><strong>Diverse Activity Types</strong>: Create interactive learning activities — free-text responses, multiple-choice questions (single or multiple select), true/false assessments, and more.</li><li data-list-item-id="e87b95b20b41fbc1659b301991b566e81"><strong>Flexible Learning Paths</strong>: Configure required or optional lessons, randomised content, and time constraints.</li><li data-list-item-id="e5c424cd84186aa93d7d557fd72f27365"><strong>Progress Tracking</strong>: Monitor student advancement with reports showing completion status, scores, and last activity.</li><li data-list-item-id="e223a0762d3a2d59d82137afb44d7afa9"><strong>Assessment Options</strong>: Both automatic grading (objective questions) and manual evaluation (text-based answers).</li><li data-list-item-id="e4c725c8af5336ffc705881a2c3ec2f2f"><strong>Interactive Learning with Immediate Feedback</strong>: Feedback-enabled activities respond instantly to student input — correcting misunderstandings in the moment and increasing knowledge retention.</li><li data-list-item-id="ea46bba08bb1309b7af0f6f6c9731032c"><strong>Role-Based Permissions</strong>: Tailored access levels for admins, teachers, and students.</li><li data-list-item-id="e7a94902efe34942c31de3b202e6d67fa"><strong>Robust Versioning</strong>: Built on Drupal''s revision system — update course content without disrupting students already in progress.</li></ul>'
+      format: filtered_html

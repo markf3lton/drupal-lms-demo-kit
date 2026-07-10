@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 64afa21d-557b-4aef-aba5-e2603643a711
+  bundle: true_false_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Scope of activity changes'
+  created:
+    -
+      value: 1783691289
+  bool_expected:
+    -
+      value: false
+  description:
+    -
+      value: 'An activity in Drupal LMS can be referenced in multiple lessons simultaneously.'
+  feedback_if_correct:
+    -
+      value: '<p>Correct! Activity changes always affect all lessons that include it — there is no per-lesson isolation. If you need a different version for one lesson, clone the activity first.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>Incorrect. Because activities are <strong>shared entities</strong>, any change you make to an activity is immediately reflected in <strong>every lesson</strong> that references it. There is no per-lesson copy. If you need an independently editable version, use the clone function to create a new activity based on the original.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Changing an activity that is used in 3 lessons only affects the lesson you are currently editing.</p>'
+      format: filtered_html

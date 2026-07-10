@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: select_multiple
+name: 'Multiple select'
+description: 'Multiple select activity'
+pluginId: select
+pluginConfiguration:
+  selection_type: multiple
+defaultMaxScore: 5

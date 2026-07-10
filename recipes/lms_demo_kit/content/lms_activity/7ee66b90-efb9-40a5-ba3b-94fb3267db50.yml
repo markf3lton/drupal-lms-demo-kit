@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 7ee66b90-efb9-40a5-ba3b-94fb3267db50
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Editing lessons and activities from the course form'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Drupal LMS provides a powerful inline editing workflow directly from the course form:</p><ul><li data-list-item-id="ed89ad6489636371139634b55e73f92d1">In the course edit form, click <strong>Create lesson</strong> to open a lesson editor in a <strong>modal window</strong>.</li><li data-list-item-id="e231a2a0f022a4b66f1fe3e85e55f790c">Inside the lesson modal, you can click <strong>Create activity</strong> to open a <strong>nested modal</strong> for activity creation.</li><li data-list-item-id="ee63d5d1a80e6686a0171544091271b0f">You can also click <strong>Reference lessons</strong> to add an existing lesson without leaving the course form.</li></ul><p>This nested modal approach means you can build an entire course — creating lessons and activities — without ever navigating away from the course edit page. This keeps the full course structure visible as you build each component.</p><p>To edit an existing lesson or activity: click the <strong>Edit</strong> link next to the item, which opens it in a modal overlay.</p>'
+      format: filtered_html

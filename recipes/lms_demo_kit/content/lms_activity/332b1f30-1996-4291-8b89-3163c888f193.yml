@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 332b1f30-1996-4291-8b89-3163c888f193
+  bundle: true_false_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Randomization reduces copying risk'
+  created:
+    -
+      value: 1783691289
+  bool_expected:
+    -
+      value: true
+  description:
+    -
+      value: 'Consider how randomization affects the student experience in a formal assessment setting.'
+  feedback_if_correct:
+    -
+      value: '<p>Correct! When activities appear in a different order — or when each student sees a different subset — it is much harder for students to collaborate or copy answers, since their sequences or question sets differ.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>This is actually <strong>true</strong>. If every student sees activities in the same fixed order, sharing answers is trivial. Randomizing the order (or the selection) means students face different sequences, making it harder to copy directly from a peer. This is a recommended practice for quiz and test lessons.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Randomizing activity order (or selecting a random subset) can reduce the likelihood of students sharing answers during assessments.</p>'
+      format: filtered_html

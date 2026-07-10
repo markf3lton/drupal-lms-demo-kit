@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: a9b40ab0-4435-43fc-bba9-14b53bee1bac
+  bundle: free_text_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Benefits of immediate feedback in activities'
+  created:
+    -
+      value: 1783691289
+  minimum_characters:
+    -
+      value: 40
+  phrase_feedback:
+    -
+      phrase: 'immediate|instant|moment|right away|in the moment'
+      feedback_present: 'Good — you mentioned the immediacy of the feedback. Getting feedback at the moment of answering is what makes these activity types so effective for learning.'
+      feedback_absent: 'Consider the timing aspect: feedback-enabled activities respond the moment the student submits their answer, while the concept is still fresh in their mind.'
+    -
+      phrase: retention|remember|reinforce|knowledge|understanding|misconception|correct
+      feedback_present: 'Good — you addressed how feedback supports understanding and knowledge retention. Correcting a misconception immediately prevents it from being reinforced.'
+      feedback_absent: "Think about what happens to a student's understanding when a mistake is corrected straight away versus left until the end of the course. How does that affect long-term retention?"
+  question:
+    -
+      value: '<p>In your own words, describe <strong>two benefits</strong> of using feedback-enabled activity types (such as true_false_feedback or select_single_feedback) compared to activity types without feedback.</p>'
+      format: filtered_html

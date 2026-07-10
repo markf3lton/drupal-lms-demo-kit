@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: select_single
 name: 'Single select'
-description: ''
+description: 'Single select activity'
 pluginId: select
 pluginConfiguration:
   selection_type: single

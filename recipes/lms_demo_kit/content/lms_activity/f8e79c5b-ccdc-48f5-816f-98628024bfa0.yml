@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: f8e79c5b-ccdc-48f5-816f-98628024bfa0
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'How to create an activity'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'Admin > LMS > Activities'
+      correct: true
+    -
+      answer: 'Admin > Content > Activities'
+      correct: false
+    -
+      answer: 'Admin > Structure > Activities'
+      correct: false
+    -
+      answer: 'Admin > LMS > Lessons > Activities'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The path is <strong>Admin &gt; LMS &gt; Activities</strong> (URL: /admin/lms/activity). From there you click Add Activity to begin.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The correct path is <strong>Admin &gt; LMS &gt; Activities</strong> (URL: /admin/lms/activity). All LMS content — activities, lessons, and courses — is managed under the LMS section of the admin menu.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>To create a new activity in Drupal LMS, follow these steps:</p><ol><li data-list-item-id="e1614d08fb6563c2c5a6301e938d966d7">Navigate to the LMS admin area</li><li data-list-item-id="e3ffa9f0ed270255a6f61741e2d30b165">Click <strong>Add Activity</strong></li><li data-list-item-id="edee8a4ac528a69f11bd9e02113b244b6">Select the appropriate <strong>activity type</strong></li><li data-list-item-id="eb66a0b3d9daaa47ddfa111b0d07908d8">Fill in the <strong>Name</strong> field (max 255 characters — this is also the headline shown to students)</li><li data-list-item-id="ed0655b7d0a8c74cd7e6e7bb5ed3b4754">Complete the type-specific fields (question, answers, feedback, etc.)</li><li data-list-item-id="e809d85edaafa0d4c2555fe00f10c6e90">Click <strong>Save</strong></li></ol><p>What is the correct admin navigation path to reach the Activities list?</p>'
+      format: filtered_html

@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 8543c46c-3414-4070-9ea4-1b2df4f01d5d
+  bundle: true_false_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Allow to revisit — default setting'
+  created:
+    -
+      value: 1783691289
+  bool_expected:
+    -
+      value: false
+  description:
+    -
+      value: 'Think about what behaviour is most useful for the typical course use case.'
+  feedback_if_correct:
+    -
+      value: '<p>Correct! "Allow to revisit" is <strong>enabled by default</strong> — meaning students can return to a completed course and review (and even change) their answers. You must explicitly disable it if you want to lock the course after completion.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>"Allow to revisit" is <strong>enabled by default</strong>, not disabled. This means that after completing a course, students can return to review content and their answers, and can resubmit to improve their score. If you want to prevent this — for example, to run a formal exam — you must explicitly disable this option on the course.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>The "Allow to revisit" option on a course is disabled by default.</p>'
+      format: filtered_html

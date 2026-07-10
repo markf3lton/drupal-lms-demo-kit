@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: fields_demo
+name: 'Many fields'
+description: 'Many fields activity'
+pluginId: true_false
+pluginConfiguration: {  }
+defaultMaxScore: 1

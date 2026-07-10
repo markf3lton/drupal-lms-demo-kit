@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.lms_admin
+  module:
+    - user
+id: user_remove_role_action.lms_admin
+label: 'Remove the LMS Admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: lms_admin

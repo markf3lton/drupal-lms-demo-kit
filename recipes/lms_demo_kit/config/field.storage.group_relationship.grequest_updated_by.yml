@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - group
+    - user
+  enforced:
+    module:
+      - group
+      - grequest
+id: group_relationship.grequest_updated_by
+field_name: grequest_updated_by
+entity_type: group_relationship
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: true
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: true
+custom_storage: false

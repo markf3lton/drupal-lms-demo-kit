@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: df803a30-f77b-4afc-a0f6-37d2fa1b3281
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Lesson scoring'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Each lesson has its own scoring system:</p><ul><li data-list-item-id="e5bab06215679d8be43d91448e999f366"><strong>Activity scores</strong>: Each activity has a <em>Maximum score</em> set per lesson instance. A student''s result for that activity is stored as their <em>Score</em>.</li><li data-list-item-id="eddcfafd1bda1f5bde643a125f1c67f7d"><strong>Lesson total</strong>: Calculated as a percentage — (sum of student scores) ÷ (sum of all maximum scores) × 100.</li><li data-list-item-id="ea41959f4efbe95441511898cd6294e3d"><strong>Required Score</strong>: The minimum percentage needed to pass the lesson. This is configured when adding the lesson to a course, not on the lesson itself.</li></ul><p><strong>Lesson statuses:</strong></p><ul><li data-list-item-id="e5073b459743fe94bd5df0bb4b550e236"><em>In progress</em> — student is still working through the lesson</li><li data-list-item-id="ed9d46e60493aedc89d80861b28f51668"><em>Needs grading</em> — lesson contains activities that require manual teacher evaluation (e.g., free-text activities)</li><li data-list-item-id="e21fab9b5492533ea0a497b4d16afcba1"><em>Passed</em> — student met or exceeded the required score</li><li data-list-item-id="eff590bfaeddaa7c8159a0bcd4d26c553"><em>Failed</em> — student finished but did not meet the required score</li></ul><p><strong>Note on grading:</strong> Lessons with only auto-graded activities (multiple choice, true/false) are scored immediately. Lessons containing teacher-graded activities (free text) show "Needs grading" until the teacher evaluates them.</p>'
+      format: filtered_html

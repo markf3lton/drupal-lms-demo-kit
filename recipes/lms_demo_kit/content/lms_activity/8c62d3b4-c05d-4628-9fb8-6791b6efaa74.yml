@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 8c62d3b4-c05d-4628-9fb8-6791b6efaa74
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'What is Drupal LMS?'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Drupal LMS is a highly flexible <strong>Learning Management System built natively in Drupal</strong>. It allows you to create and manage online courses, organise students, deliver various types of learning activities, and track student progress — all within your Drupal website, alongside any other Drupal content types.</p><p>Key points:</p><ul><li data-list-item-id="eabfb65057e2cc77e82d5128cced655b7">It is a <strong>native Drupal module</strong>, not a separate application — it uses Drupal''s own entities, routes, controllers, and views.</li><li data-list-item-id="e70d753470a71625d4e2a3cb215a9af3d">Unlike standalone LMS platforms (Moodle, Canvas, Blackboard), Drupal LMS lets you <strong>seamlessly blend learning content with other types of website content</strong>.</li><li data-list-item-id="e2238eb4a73ad6bfe6935b4aeb7ee7d50">It serves as both a standalone LMS solution and a foundation for custom extensions via Drupal''s plugin system.</li><li data-list-item-id="e71bb1107d9b0b339e9e53691ed3891b4">It is fully <strong>open source</strong> with no licensing fees.</li></ul><p>The ideal use case is to add flexible learning options to a multi-purpose Drupal site without integrating a completely separate platform.</p>'
+      format: filtered_html

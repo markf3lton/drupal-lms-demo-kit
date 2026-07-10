@@ -1,0 +1,85 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_lesson
+  uuid: 141e92f2-5a34-44cb-bb0e-66254e44fecc
+  bundle: lesson
+  default_langcode: en
+  depends:
+    8a605103-dfd6-48fd-897a-0552992baa96: lms_activity
+    e4a62c7e-f171-43f0-b859-77ca09decb3a: lms_activity
+    75949c3f-3f9b-45e3-af79-c8a2f00da49a: lms_activity
+    abf532f9-13a5-4c10-a2e5-db8ca86bc3f7: lms_activity
+    332b1f30-1996-4291-8b89-3163c888f193: lms_activity
+    df803a30-f77b-4afc-a0f6-37d2fa1b3281: lms_activity
+    8d6a39cd-c903-4c80-a675-2b3e12f084be: lms_activity
+    3856e39b-1f6c-42c1-b151-c4e86db1c6da: lms_activity
+    3d63f24c-847e-435a-9fa0-8b2e4350774d: lms_activity
+    ab11a07d-dabd-4dc3-95e6-43f9121887ba: lms_activity
+    61e17407-6601-40c7-9844-22a996986671: lms_activity
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: Lessons
+  created:
+    -
+      value: 1783691289
+  backwards_navigation:
+    -
+      value: false
+  randomization:
+    -
+      value: '0'
+  random_activities:
+    -
+      value: 1
+  activities:
+    -
+      entity: 8a605103-dfd6-48fd-897a-0552992baa96
+      data:
+        max_score: '0'
+    -
+      entity: e4a62c7e-f171-43f0-b859-77ca09decb3a
+      data:
+        max_score: '0'
+    -
+      entity: 75949c3f-3f9b-45e3-af79-c8a2f00da49a
+      data:
+        max_score: '10'
+    -
+      entity: abf532f9-13a5-4c10-a2e5-db8ca86bc3f7
+      data:
+        max_score: '10'
+    -
+      entity: 332b1f30-1996-4291-8b89-3163c888f193
+      data:
+        max_score: '10'
+    -
+      entity: df803a30-f77b-4afc-a0f6-37d2fa1b3281
+      data:
+        max_score: '0'
+    -
+      entity: 8d6a39cd-c903-4c80-a675-2b3e12f084be
+      data:
+        max_score: '10'
+    -
+      entity: 3856e39b-1f6c-42c1-b151-c4e86db1c6da
+      data:
+        max_score: '10'
+    -
+      entity: 3d63f24c-847e-435a-9fa0-8b2e4350774d
+      data:
+        max_score: '10'
+    -
+      entity: ab11a07d-dabd-4dc3-95e6-43f9121887ba
+      data:
+        max_score: '0'
+    -
+      entity: 61e17407-6601-40c7-9844-22a996986671
+      data:
+        max_score: '10'

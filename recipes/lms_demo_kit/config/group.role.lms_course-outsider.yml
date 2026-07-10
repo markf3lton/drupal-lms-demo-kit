@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_course
+    - user.role.authenticated
+id: lms_course-outsider
+label: Outsider
+weight: 3
+admin: false
+scope: outsider
+global_role: authenticated
+group_type: lms_course
+permissions:
+  - 'join group'
+  - 'view group'

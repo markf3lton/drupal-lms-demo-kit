@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_course
+    - user.role.lms_admin
+id: lms_course-lms_admin_member
+label: 'LMS Admin member'
+weight: 1
+admin: true
+scope: insider
+global_role: lms_admin
+group_type: lms_course
+permissions: {  }

@@ -1,0 +1,80 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_lesson
+  uuid: 5c3332c4-a3f2-458d-9972-805fe94a20db
+  bundle: lesson
+  default_langcode: en
+  depends:
+    5e443f81-ac69-4464-b5af-d312cb197e6c: lms_activity
+    6e6f8fd2-625a-47a1-ac47-9e29a90109be: lms_activity
+    f8e79c5b-ccdc-48f5-816f-98628024bfa0: lms_activity
+    e941a0c0-0746-4628-8e69-fb9d3d794f7f: lms_activity
+    1da3db6d-459a-4581-a7b7-426cb63a7c35: lms_activity
+    64afa21d-557b-4aef-aba5-e2603643a711: lms_activity
+    3420d050-8f51-42c7-b248-4e611cf84993: lms_activity
+    cbfdfb7e-a155-4452-b34d-ef232794395c: lms_activity
+    f8ca8e30-44f7-4a47-978e-b05a5c413cd1: lms_activity
+    a9b40ab0-4435-43fc-bba9-14b53bee1bac: lms_activity
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: Activities
+  created:
+    -
+      value: 1783691289
+  backwards_navigation:
+    -
+      value: false
+  randomization:
+    -
+      value: '0'
+  random_activities:
+    -
+      value: 1
+  activities:
+    -
+      entity: 5e443f81-ac69-4464-b5af-d312cb197e6c
+      data:
+        max_score: '0'
+    -
+      entity: 6e6f8fd2-625a-47a1-ac47-9e29a90109be
+      data:
+        max_score: '0'
+    -
+      entity: f8e79c5b-ccdc-48f5-816f-98628024bfa0
+      data:
+        max_score: '10'
+    -
+      entity: e941a0c0-0746-4628-8e69-fb9d3d794f7f
+      data:
+        max_score: '10'
+    -
+      entity: 1da3db6d-459a-4581-a7b7-426cb63a7c35
+      data:
+        max_score: '0'
+    -
+      entity: 64afa21d-557b-4aef-aba5-e2603643a711
+      data:
+        max_score: '10'
+    -
+      entity: 3420d050-8f51-42c7-b248-4e611cf84993
+      data:
+        max_score: '10'
+    -
+      entity: cbfdfb7e-a155-4452-b34d-ef232794395c
+      data:
+        max_score: '0'
+    -
+      entity: f8ca8e30-44f7-4a47-978e-b05a5c413cd1
+      data:
+        max_score: '10'
+    -
+      entity: a9b40ab0-4435-43fc-bba9-14b53bee1bac
+      data:
+        max_score: '10'

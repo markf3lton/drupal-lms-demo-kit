@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: f4231494-5cef-4e3e-aa5e-d1e1518587f8
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Which role creates courses?'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'LMS Admin'
+      correct: false
+    -
+      answer: 'LMS Teacher'
+      correct: true
+    -
+      answer: Student
+      correct: false
+    -
+      answer: 'All roles equally'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The <strong>LMS Teacher</strong> role is designed specifically for content creators and facilitators: building courses, monitoring performance, and grading submissions.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The <strong>LMS Teacher</strong> role is responsible for developing and managing course content. LMS Admins have broader system-level access but are not typically the ones building course content day-to-day. Students can only consume content — they cannot create it.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Drupal LMS has three primary user roles, each with a distinct scope of access:</p><table class="table"><thead><tr><th>Role</th><th>Scope</th></tr></thead><tbody><tr><td><strong>LMS Admin</strong></td><td>Full system access — configure all aspects, manage students, oversee the entire learning environment</td></tr><tr><td><strong>LMS Teacher</strong></td><td>Content creator and facilitator — develop courses, monitor student performance, evaluate manual submissions</td></tr><tr><td><strong>Student</strong></td><td>Learner — enrol in courses, complete activities, track personal progress</td></tr></tbody></table><p>Which role is responsible for <strong>developing and managing course content</strong>?</p>'
+      format: filtered_html

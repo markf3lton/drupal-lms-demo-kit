@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.questions
+    - lms.lms_activity_type.free_text
+  module:
+    - text
+id: lms_activity.free_text.questions
+field_name: questions
+entity_type: lms_activity
+bundle: free_text
+label: Questions
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

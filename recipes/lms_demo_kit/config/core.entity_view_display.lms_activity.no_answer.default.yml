@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.no_answer.field_image
+    - field.field.lms_activity.no_answer.field_information
+    - image.style.wide
+    - lms.lms_activity_type.no_answer
+  module:
+    - image
+    - text
+id: lms_activity.no_answer.default
+targetEntityType: lms_activity
+bundle: no_answer
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_information:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  name: true
+  uid: true

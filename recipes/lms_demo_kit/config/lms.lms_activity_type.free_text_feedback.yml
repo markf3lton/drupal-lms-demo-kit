@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: free_text_feedback
+name: 'Text area (feedback)'
+description: 'Text area (feedback) activity'
+pluginId: free_text_feedback
+pluginConfiguration: {  }
+defaultMaxScore: 5

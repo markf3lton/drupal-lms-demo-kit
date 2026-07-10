@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 6e6f8fd2-625a-47a1-ac47-9e29a90109be
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'What are activities?'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Activities are the <strong>building blocks</strong> that make up lessons and courses. They are the interactive elements that students directly engage with throughout their learning journey.</p><p>Activities fall into three broad categories:</p><ol><li data-list-item-id="e6d88b88724838c881000915be95b92ff"><strong>Content-only</strong> (no_answer): Presents information — text, images, lists, tables — with no student response required. Always has a maximum score of 0.</li><li data-list-item-id="e9a405f4f7c263a1ce8571e52638c300f"><strong>Question types without feedback</strong> (e.g., select_single, true_false): Students answer and receive a score, but no explanatory feedback is shown.</li><li data-list-item-id="e1090d32a47ebb8d17c9e6fbacb8085ad"><strong>Feedback-enabled types</strong> (e.g., select_single_feedback, true_false_feedback, fill_in_the_blanks_feedback, free_text_feedback): Students answer and immediately receive tailored feedback — correct or incorrect — that explains, reinforces, or corrects. These are the most pedagogically powerful types.</li></ol><p>Each <strong>Activity</strong> is based on an <strong>Activity Type</strong>, which is powered by an <strong>Activity-Answer Plugin</strong> — the underlying code that controls behaviour, grading, and feedback.</p>'
+      format: filtered_html

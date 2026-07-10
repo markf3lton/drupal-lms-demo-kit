@@ -2,13 +2,13 @@ _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
 uuid: 0c647fe2-f986-4397-872c-9709de7518c8
-name: 'Drush Site-Install'
+name: 'Drupal LMS'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /courses
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

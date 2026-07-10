@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+  theme:
+    - olivero
+id: olivero_course_navigation
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: course_steps_block
+settings:
+  id: course_steps_block
+  label: 'Course navigation'
+  label_display: '0'
+  provider: lms
+  context_mapping:
+    user: '@user.current_user_context:current_user'
+    group: '@group.group_route_context:group'
+visibility: {  }

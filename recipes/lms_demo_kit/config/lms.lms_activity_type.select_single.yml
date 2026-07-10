@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: select_single
+name: 'Single select'
+description: 'Single select activity'
+pluginId: select
+pluginConfiguration:
+  selection_type: single
+defaultMaxScore: 5

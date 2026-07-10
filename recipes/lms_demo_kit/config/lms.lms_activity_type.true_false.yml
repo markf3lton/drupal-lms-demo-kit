@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: true_false
+name: 'True / false'
+description: 'True or false activity'
+pluginId: true_false
+pluginConfiguration: {  }
+defaultMaxScore: 5

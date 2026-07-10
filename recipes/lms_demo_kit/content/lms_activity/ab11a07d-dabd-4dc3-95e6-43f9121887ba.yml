@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: ab11a07d-dabd-4dc3-95e6-43f9121887ba
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Editing activities via modal windows'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Drupal LMS allows you to create and edit activities <strong>directly from the lesson form</strong> using modal windows, without navigating away:</p><ul><li data-list-item-id="e2b09bfc12d8b2cc9095d71147683b40a">In the lesson edit form, click <strong>Create activity</strong> to open a modal where you can build a new activity from scratch.</li><li data-list-item-id="e4642be32c01e77df91f92a1a60fcfee9">Click <strong>Reference activities</strong> to open a modal and search for an existing activity to add.</li><li data-list-item-id="e9875f84fd5cc708ed0fd08b6d195c83d">Each activity row has an <strong>Edit</strong> link that opens the activity editor in a modal.</li></ul><p>This workflow keeps you in context — you can build or refine activities while viewing the full lesson structure, without losing your place in the lesson form.</p><p>This is the recommended approach when building a lesson from scratch, as you can see the shape of the full lesson while adding each activity.</p>'
+      format: filtered_html

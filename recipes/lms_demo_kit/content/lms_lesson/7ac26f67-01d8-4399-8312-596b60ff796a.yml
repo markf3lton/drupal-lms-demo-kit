@@ -1,0 +1,80 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_lesson
+  uuid: 7ac26f67-01d8-4399-8312-596b60ff796a
+  bundle: lesson
+  default_langcode: en
+  depends:
+    327b5013-1649-415f-aba0-8685e8fdc45f: lms_activity
+    8c62d3b4-c05d-4628-9fb8-6791b6efaa74: lms_activity
+    3ded3f5b-6db8-493c-92fa-c30c83458fb7: lms_activity
+    634d9b6f-2fe1-414a-99aa-7d6952fa810d: lms_activity
+    0b15a9db-1454-4306-9d5a-618d348b81b8: lms_activity
+    f4231494-5cef-4e3e-aa5e-d1e1518587f8: lms_activity
+    3e30ae7b-85a6-43c8-a8f3-4ac6c0d2b8b5: lms_activity
+    d34b3a33-95de-4900-893b-e0b14bca82b3: lms_activity
+    504e5798-d934-47d3-b068-c04de703942f: lms_activity
+    4a04f756-9243-4128-a589-989cb0259b4f: lms_activity
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Introduction to Drupal LMS'
+  created:
+    -
+      value: 1783691289
+  backwards_navigation:
+    -
+      value: false
+  randomization:
+    -
+      value: '0'
+  random_activities:
+    -
+      value: 1
+  activities:
+    -
+      entity: 327b5013-1649-415f-aba0-8685e8fdc45f
+      data:
+        max_score: '0'
+    -
+      entity: 8c62d3b4-c05d-4628-9fb8-6791b6efaa74
+      data:
+        max_score: '0'
+    -
+      entity: 3ded3f5b-6db8-493c-92fa-c30c83458fb7
+      data:
+        max_score: '10'
+    -
+      entity: 634d9b6f-2fe1-414a-99aa-7d6952fa810d
+      data:
+        max_score: '0'
+    -
+      entity: 0b15a9db-1454-4306-9d5a-618d348b81b8
+      data:
+        max_score: '10'
+    -
+      entity: f4231494-5cef-4e3e-aa5e-d1e1518587f8
+      data:
+        max_score: '10'
+    -
+      entity: 3e30ae7b-85a6-43c8-a8f3-4ac6c0d2b8b5
+      data:
+        max_score: '10'
+    -
+      entity: d34b3a33-95de-4900-893b-e0b14bca82b3
+      data:
+        max_score: '0'
+    -
+      entity: 504e5798-d934-47d3-b068-c04de703942f
+      data:
+        max_score: '10'
+    -
+      entity: 4a04f756-9243-4128-a589-989cb0259b4f
+      data:
+        max_score: '10'

@@ -1,0 +1,35 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 8a5811c9-b092-4df6-bcdd-21c6af309170
+  bundle: free_text_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Allow to revisit — when to disable it'
+  created:
+    -
+      value: 1783691289
+  minimum_characters:
+    -
+      value: 50
+  phrase_feedback:
+    -
+      phrase: exam|test|formal|assessment|evaluat|certif|grade
+      feedback_present: 'Good — you identified a formal assessment scenario. Disabling Allow to revisit is most appropriate when each attempt must be independent and scores should not be altered after submission.'
+      feedback_absent: 'Think about situations where you need to prevent students from going back and changing their answers after submission — for example, formal exams or certification assessments.'
+    -
+      phrase: 'restart|new attempt|lock|block|cannot access|graded|results'
+      feedback_present: 'Good — you described the consequence correctly. When disabled, the course is locked after completion and the student can only begin a new attempt via the Restart button.'
+      feedback_absent: 'Describe what happens to the student when they finish a course with Allow to revisit disabled. Can they still access the course content? What does the course show them instead?'
+  question:
+    -
+      value: '<p>The course setting <strong>"Allow to revisit"</strong> is enabled by default, but there are situations where you should disable it.</p><p>Describe a situation where it would be appropriate to <strong>disable</strong> "Allow to revisit". What are the consequences for the student when this setting is turned off?</p>'
+      format: filtered_html

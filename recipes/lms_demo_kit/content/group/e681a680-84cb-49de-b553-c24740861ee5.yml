@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: group
+  uuid: e681a680-84cb-49de-b553-c24740861ee5
+  bundle: lms_class
+  default_langcode: en
+default:
+  revision_user:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  label:
+    -
+      value: 'Class 2T'
+  created:
+    -
+      value: 1783691289
+  path:
+    -
+      alias: ''
+      langcode: en
+  membership_validation:
+    -
+      value: false

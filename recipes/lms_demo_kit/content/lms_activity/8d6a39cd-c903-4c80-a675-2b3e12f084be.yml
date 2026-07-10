@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 8d6a39cd-c903-4c80-a675-2b3e12f084be
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Lesson percentage score formula'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'Sum of student scores ÷ sum of maximum scores × 100'
+      correct: true
+    -
+      answer: 'Average of individual activity percentages'
+      correct: false
+    -
+      answer: 'Highest activity score ÷ total maximum score × 100'
+      correct: false
+    -
+      answer: 'Number of passed activities ÷ total activities × 100'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The formula is <strong>(8 + 6 + 10) ÷ (10 + 10 + 10) × 100 = 24 ÷ 30 × 100 = 80%</strong>. It is a simple ratio of total earned points to total available points.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: "<p>The formula is: <strong>Score % = (sum of student scores) ÷ (sum of maximum scores) × 100</strong>. In this example: (8 + 6 + 10) ÷ (10 + 10 + 10) × 100 = 24 ÷ 30 × 100 = <strong>80%</strong>. Each activity's max score is a weight — activities with higher max scores contribute more to the total.</p>"
+      format: filtered_html
+  question:
+    -
+      value: "<p>A student has just completed a lesson with three scored activities. Their scores were 8, 6, and 10 out of maximum scores of 10, 10, and 10 respectively.</p><p>How does Drupal LMS calculate the student's <strong>percentage score</strong> for the lesson?</p>"
+      format: filtered_html

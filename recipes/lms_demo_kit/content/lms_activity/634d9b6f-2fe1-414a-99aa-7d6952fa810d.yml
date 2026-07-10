@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 634d9b6f-2fe1-414a-99aa-7d6952fa810d
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Content hierarchy'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Drupal LMS organises learning content in a <strong>three-level hierarchy</strong>:</p><ol><li data-list-item-id="eb6d38216224062aaf2d43f4db020a051"><strong>Courses</strong> — the top-level containers. Each course holds multiple lessons and has its own navigation settings and student progress tracking.</li><li data-list-item-id="e2368c13d3064ad83d234669028a9fd57"><strong>Lessons</strong> — collections of related activities that form a learning unit focused on a topic or objective.</li><li data-list-item-id="ebdfb21afe8a63cbadcdcc2d3b4a3c973"><strong>Activities</strong> — the individual building blocks: content slides, questions, interactive exercises.</li></ol><p>A useful planning tip: map your instructional design to these levels — conceptual units become courses, topic areas become lessons, and individual interactions become activities.</p><p><strong>What about Classes?</strong> Classes are <em>optional</em> groups of students enrolled in a course (cohorts). They are a student management tool and are <strong>not</strong> part of the content hierarchy. Multiple classes can experience the same course content, potentially with different teachers or timelines.</p>'
+      format: filtered_html

@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 5490396b-4db8-4386-ad12-e9c228840d62
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Free Navigation course setting'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>The <strong>Free Navigation</strong> setting controls how students move through the course:</p><ul><li data-list-item-id="e330e819cb79cea568b8ef8522778bba2"><strong>Disabled</strong> (default): Students must complete activities and lessons in sequential order — they cannot skip ahead or return to a previous activity unless backwards navigation is enabled on the lesson.</li><li data-list-item-id="e4fc91c16cfd279476895bbf261f3e220"><strong>Enabled</strong>: Students can jump to any activity at any time, in any direction, without restriction.</li></ul><p><strong>Important interaction with lesson settings:</strong> Enabling Free Navigation at the <em>course</em> level <strong>overrides the Backwards Navigation setting in all lessons</strong>. In a course with Free Navigation on, students can always move freely — regardless of what the individual lesson settings say.</p><p>Use Free Navigation for exploratory or reference-style courses where a linear path is not important. Keep it disabled for structured learning paths where progression order matters.</p>'
+      format: filtered_html

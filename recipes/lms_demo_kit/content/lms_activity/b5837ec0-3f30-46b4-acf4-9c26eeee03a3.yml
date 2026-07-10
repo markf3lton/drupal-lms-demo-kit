@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: b5837ec0-3f30-46b4-acf4-9c26eeee03a3
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Courses — lesson overview'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Welcome to <strong>Lesson 4: Courses</strong>.</p><p>In this lesson you will learn:</p><ul><li data-list-item-id="e024ed83b0752eb40270c37f1df01826d">What courses are and how they function as the top-level containers in Drupal LMS</li><li data-list-item-id="e47b982f9129c2de5db175b114b73680c">How to <strong>create a course</strong> in the admin interface</li><li data-list-item-id="e921639fb353fa3f88a585fa3067c275a">The <strong>Free Navigation</strong> setting and its relationship to lesson-level backwards navigation</li><li data-list-item-id="e3757bbc0e32c60361821de9d5b3500bc">The <strong>Allow to revisit</strong> setting and what happens when a student completes a course</li><li data-list-item-id="eb4d0c2994c4efe8584f7fe6950b02c55">How to add lessons to a course and configure per-lesson parameters</li><li data-list-item-id="eaaa4bacaf6622aa02e3d33648a1d31ca">How to <strong>view student statistics</strong> from the course page</li></ul><p>Courses are the top of the hierarchy and the entry point for students. Course settings have a significant impact on the overall learning experience.</p>'
+      format: filtered_html

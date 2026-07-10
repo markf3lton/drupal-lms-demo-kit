@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: cbfdfb7e-a155-4452-b34d-ef232794395c
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Activity design best practices'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Well-designed activities lead to better learning outcomes. Keep these principles in mind:</p><ul><li data-list-item-id="e066053376c7ab626268837ac5fadfbad"><strong>One activity, one objective</strong>: Focus each activity on a single learning goal. Activities that cover multiple concepts become confusing and harder to analyse.</li><li data-list-item-id="ef671e9723ff1cfbb038b6423d082d5aa"><strong>Clear instructions</strong>: Include unambiguous directions so students understand exactly what is expected.</li><li data-list-item-id="e0151e8dfaa5f0f83826ac317fbb52a70"><strong>Appropriate difficulty</strong>: Calibrate complexity to match the student''s current knowledge level and the lesson''s learning objectives.</li><li data-list-item-id="e9e61f7a4ef4a3afc36aba7bad88064cb"><strong>Constructive feedback</strong>: For feedback-enabled activities, offer specific guidance that facilitates learning — positive reinforcement for correct answers, and alternative approaches or explanations for wrong answers. Avoid simply saying "Correct" or "Wrong".</li><li data-list-item-id="eb4bfa4ad386ad9111520a76e58ff853c"><strong>Test with a student account</strong>: Before making an activity live, log in as a test student to experience it exactly as a learner will. This surfaces issues you cannot see as an admin.</li><li data-list-item-id="e737e49a9df4c590df1a349e248b692b2"><strong>Consistent formatting</strong>: Maintain uniform presentation patterns across related activities for a professional and predictable experience.</li></ul>'
+      format: filtered_html

@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 327b5013-1649-415f-aba0-8685e8fdc45f
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Lesson overview'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Welcome to <strong>Lesson 1: Introduction to Drupal LMS</strong>.</p><p>In this lesson you will learn:</p><ul><li data-list-item-id="e1db99afda30d773b12fc023e82bec753">What Drupal LMS is and how it differs from standalone LMS platforms</li><li data-list-item-id="e9b1851592d543126c5494bca8e1f3715">The three-level <strong>content hierarchy</strong>: Courses → Lessons → Activities</li><li data-list-item-id="e566ddb665b9a867f634ca7eeb78efb9a">The role of <strong>Classes</strong> and how they relate to the hierarchy</li><li data-list-item-id="e20de0882c93475a4d26b7954228b6722">The three <strong>user roles</strong>: LMS Admin, LMS Teacher, and Student</li><li data-list-item-id="eb3324139040f67dd5b090e4e2d0be212">The key features that make Drupal LMS unique</li></ul><p>By the end of this lesson you will have a solid understanding of the building blocks of Drupal LMS and be ready to start creating your own courses.</p>'
+      format: filtered_html

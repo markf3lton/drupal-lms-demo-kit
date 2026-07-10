@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: e941a0c0-0746-4628-8e69-fb9d3d794f7f
+  bundle: select_multiple_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Activity types with immediate feedback'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: true_false_feedback
+      correct: true
+    -
+      answer: select_single_feedback
+      correct: true
+    -
+      answer: fill_in_the_blanks_feedback
+      correct: true
+    -
+      answer: no_answer
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! All three *_feedback types provide immediate feedback. no_answer is a content-only slide — it has no question and therefore no feedback.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>no_answer is a content-only slide — it presents information but asks nothing and gives no feedback. All activity types whose names end in _feedback (true_false_feedback, select_single_feedback, select_multiple_feedback, fill_in_the_blanks_feedback, free_text_feedback) provide immediate, tailored feedback to the student.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Drupal LMS includes several <strong>feedback-enabled activity types</strong> that provide immediate, tailored responses to student answers:</p><ul><li data-list-item-id="e16f3b84f900985cecf0ca470a8ebb051">true_false_feedback — student marks a statement as true or false; feedback explains why</li><li data-list-item-id="eca80fc1710199534b03ae8dcd0175b63">select_single_feedback — student picks one answer from a list; feedback elaborates on the correct choice</li><li data-list-item-id="e9601abd5770b31f5d25af08a10da9f4f">select_multiple_feedback — student selects all correct answers; feedback guides correction</li><li data-list-item-id="e642431f88652469dfc46a1a1b2d63abc">fill_in_the_blanks_feedback — student drags words into gaps in a text; feedback reinforces the concepts</li><li data-list-item-id="e1ebbfb057fdf50a8bb7b8bc555b3a5a2">free_text_feedback — student writes a free-text answer; feedback is triggered by key phrases</li></ul><p>Which of the following activity types offer <strong>immediate feedback</strong> to students? Select all that apply.</p>'
+      format: filtered_html

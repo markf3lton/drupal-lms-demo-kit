@@ -1,0 +1,90 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_lesson
+  uuid: 2250dcbc-e768-4ac2-87c6-ce1166358e25
+  bundle: lesson
+  default_langcode: en
+  depends:
+    b5837ec0-3f30-46b4-acf4-9c26eeee03a3: lms_activity
+    18c211a1-9bde-46ae-89bb-ac607d77a2ae: lms_activity
+    5490396b-4db8-4386-ad12-e9c228840d62: lms_activity
+    3a3e02d1-fe76-413c-910e-1e8a7650a474: lms_activity
+    52b6b318-765f-47ef-9d4e-fbf3883118aa: lms_activity
+    8543c46c-3414-4070-9ea4-1b2df4f01d5d: lms_activity
+    30700538-0025-478c-988a-6a26513c90e2: lms_activity
+    0e5642a9-039f-46ed-9e0e-e69b5f89d68d: lms_activity
+    7ee66b90-efb9-40a5-ba3b-94fb3267db50: lms_activity
+    d8266bc4-c546-40c2-b105-0d25544ef7ae: lms_activity
+    04718477-d6a3-49e9-bfd6-e2aac9e88aee: lms_activity
+    8a5811c9-b092-4df6-bcdd-21c6af309170: lms_activity
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: Courses
+  created:
+    -
+      value: 1783691289
+  backwards_navigation:
+    -
+      value: false
+  randomization:
+    -
+      value: '0'
+  random_activities:
+    -
+      value: 1
+  activities:
+    -
+      entity: b5837ec0-3f30-46b4-acf4-9c26eeee03a3
+      data:
+        max_score: '0'
+    -
+      entity: 18c211a1-9bde-46ae-89bb-ac607d77a2ae
+      data:
+        max_score: '10'
+    -
+      entity: 5490396b-4db8-4386-ad12-e9c228840d62
+      data:
+        max_score: '0'
+    -
+      entity: 3a3e02d1-fe76-413c-910e-1e8a7650a474
+      data:
+        max_score: '10'
+    -
+      entity: 52b6b318-765f-47ef-9d4e-fbf3883118aa
+      data:
+        max_score: '0'
+    -
+      entity: 8543c46c-3414-4070-9ea4-1b2df4f01d5d
+      data:
+        max_score: '10'
+    -
+      entity: 30700538-0025-478c-988a-6a26513c90e2
+      data:
+        max_score: '10'
+    -
+      entity: 0e5642a9-039f-46ed-9e0e-e69b5f89d68d
+      data:
+        max_score: '10'
+    -
+      entity: 7ee66b90-efb9-40a5-ba3b-94fb3267db50
+      data:
+        max_score: '0'
+    -
+      entity: d8266bc4-c546-40c2-b105-0d25544ef7ae
+      data:
+        max_score: '10'
+    -
+      entity: 04718477-d6a3-49e9-bfd6-e2aac9e88aee
+      data:
+        max_score: '10'
+    -
+      entity: 8a5811c9-b092-4df6-bcdd-21c6af309170
+      data:
+        max_score: '10'

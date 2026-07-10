@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 504e5798-d934-47d3-b068-c04de703942f
+  bundle: true_false_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Drupal LMS content integration'
+  created:
+    -
+      value: 1783691289
+  bool_expected:
+    -
+      value: true
+  description:
+    -
+      value: 'Consider what sets Drupal LMS apart from platforms like Moodle, Canvas, or Blackboard.'
+  feedback_if_correct:
+    -
+      value: "<p>Correct! This is one of Drupal LMS's most distinctive advantages. Because it is a native Drupal module, learning content coexists with news articles, product pages, blog posts, or any other content type — all sharing the same theme, permissions, and infrastructure.</p>"
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>Actually, this is <strong>true</strong>. Unlike standalone LMS platforms (Moodle, Canvas, Blackboard) which are completely separate systems requiring API connections, Drupal LMS is native to Drupal. This means your learning content lives alongside any other Drupal content on your site — no extra integration work required.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Drupal LMS allows you to seamlessly blend learning content with other types of Drupal content on the same site.</p>'
+      format: filtered_html

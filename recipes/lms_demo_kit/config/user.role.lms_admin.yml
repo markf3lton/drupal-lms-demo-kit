@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+  module:
+    - field_ui
+    - filter
+    - group
+    - lms
+    - system
+    - toolbar
+id: lms_admin
+label: 'LMS Admin'
+weight: 4
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access group overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'administer lms'
+  - 'administer lms_activity display'
+  - 'administer lms_activity fields'
+  - 'administer lms_activity form display'
+  - 'administer users'
+  - 'create lms_activity entities'
+  - 'create lms_class group'
+  - 'create lms_course group'
+  - 'create lms_lesson entities'
+  - 'use text format filtered_html'
+  - 'view the administration theme'

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms_certificate_entity
+id: lms_certificate_entity_save_action
+label: 'Save lms_certificate_entities'
+type: lms_certificate_entity
+plugin: 'entity:save_action:lms_certificate_entity'
+configuration: {  }

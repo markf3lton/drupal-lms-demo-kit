@@ -1,0 +1,23 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 5e443f81-ac69-4464-b5af-d312cb197e6c
+  bundle: no_answer
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Activities — lesson overview'
+  created:
+    -
+      value: 1783691289
+  field_information:
+    -
+      value: '<p>Welcome to <strong>Lesson 2: Activities</strong>.</p><p>In this lesson you will learn:</p><ul><li data-list-item-id="ebe767c0896697c30a48ebf0a3c1e0d49">What activities are and how they serve as the building blocks of a course</li><li data-list-item-id="ea954b6519ebe58cb80115337733d6262">How to <strong>create</strong> an activity in the Drupal LMS admin interface</li><li data-list-item-id="ee65312d74dc84c7495266528cd3cd00e">The different activity types, with a focus on <strong>feedback-enabled</strong> types that promote active learning</li><li data-list-item-id="e6558aee8e7bcd27555e0cce58248aeaa">How <strong>activity reusability</strong> works — and the important implications of shared activities</li><li data-list-item-id="ec85a57aebf51cc35790f78b24ac121cf">Best practices for designing effective activities</li></ul><p>Activities are the smallest unit of learning in Drupal LMS. Understanding them well is essential before building lessons and courses.</p>'
+      format: filtered_html

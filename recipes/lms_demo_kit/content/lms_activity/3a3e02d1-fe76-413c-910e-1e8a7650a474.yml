@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 3a3e02d1-fe76-413c-910e-1e8a7650a474
+  bundle: true_false_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Free Navigation overrides lesson backwards navigation'
+  created:
+    -
+      value: 1783691289
+  bool_expected:
+    -
+      value: true
+  description:
+    -
+      value: 'Course settings can interact with and override individual lesson settings.'
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The course-level Free Navigation setting takes precedence over the lesson-level Backwards Navigation setting. When Free Navigation is on, students can move freely in all directions regardless of what lessons specify.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: "<p>This is <strong>true</strong>. The course-level Free Navigation setting <strong>overrides</strong> the lesson-level Backwards Navigation setting for all lessons in that course. When Free Navigation is enabled, students can jump to any activity — the lesson's backwards navigation setting is simply ignored.</p>"
+      format: filtered_html
+  question:
+    -
+      value: '<p>Enabling Free Navigation at the course level overrides the Backwards Navigation setting in all lessons of that course.</p>'
+      format: filtered_html

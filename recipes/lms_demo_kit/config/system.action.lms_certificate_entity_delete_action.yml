@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms_certificate_entity
+id: lms_certificate_entity_delete_action
+label: 'Delete lms_certificate_entities'
+type: lms_certificate_entity
+plugin: 'entity:delete_action:lms_certificate_entity'
+configuration: {  }

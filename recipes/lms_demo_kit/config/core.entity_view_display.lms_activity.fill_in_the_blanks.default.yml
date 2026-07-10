@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.fill_in_the_blanks.field_distraction_words
+    - field.field.lms_activity.fill_in_the_blanks.field_question_text
+    - lms.lms_activity_type.fill_in_the_blanks
+id: lms_activity.fill_in_the_blanks.default
+targetEntityType: lms_activity
+bundle: fill_in_the_blanks
+mode: default
+content: {  }
+hidden:
+  field_distraction_words: true
+  field_question_text: true
+  name: true
+  uid: true

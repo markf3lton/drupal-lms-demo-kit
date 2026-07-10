@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 18c211a1-9bde-46ae-89bb-ac607d77a2ae
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'What are courses and how to create them'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'Admin > LMS > Courses'
+      correct: true
+    -
+      answer: 'Admin > Content > Courses'
+      correct: false
+    -
+      answer: 'Admin > Structure > Courses'
+      correct: false
+    -
+      answer: 'Admin > Groups > Courses'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The path is <strong>Admin &gt; LMS &gt; Courses</strong> (URL: /admin/lms/courses). This is the central management page for all courses in the system.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The correct path is <strong>Admin &gt; LMS &gt; Courses</strong> (URL: /admin/lms/courses). Although courses are technically group entities under the hood, they are managed through the LMS section of the admin menu, alongside activities and lessons.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>In Drupal LMS, <strong>courses</strong> are the main containers for your learning content. Each course:</p><ul><li data-list-item-id="e9f5b6c08d0200bee345d8422b2be1be2">Contains multiple lessons</li><li data-list-item-id="ef6075946b316724fd1567f5d9651066b">Can have multiple classes of students</li><li data-list-item-id="e93de8dcf56d40a7a08c4d150b99a85b2">Has its own navigation and progress tracking settings</li><li data-list-item-id="e58c9b6c91721937aaf98a516f5b778da">Is implemented as a specialised group type</li></ul><p><strong>To create a new course:</strong></p><ol><li data-list-item-id="ee6ebc3aadc3e60c6318da669472d95aa">Navigate to the LMS admin area</li><li data-list-item-id="e401fe620f82cff6e764a010053f461c4">Click <strong>Add Course</strong></li><li data-list-item-id="e465e20a9fd30bf7c2bb24b825cd460c0">Fill in the <strong>Title</strong> and optional <strong>Description</strong></li><li data-list-item-id="e26631ba904a75723a9ee72feb761268f">Configure course options (Free Navigation, Allow to revisit)</li><li data-list-item-id="e616f88406603d6e590c11e380dc83ccf">Add lessons</li><li data-list-item-id="e1291b50b29111cd886bf7e9c7e58c394">Click <strong>Save</strong></li></ol><p>What is the correct admin navigation path to reach the Courses list?</p>'
+      format: filtered_html

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: no_answer
+name: Slide
+description: 'Slide activity'
+pluginId: no_answer
+pluginConfiguration: {  }
+defaultMaxScore: 5

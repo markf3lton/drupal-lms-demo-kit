@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 3d63f24c-847e-435a-9fa0-8b2e4350774d
+  bundle: fill_in_the_blanks_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Needs grading lesson status'
+  created:
+    -
+      value: 1783691289
+  field_distraction_words:
+    -
+      value: automatic
+    -
+      value: random
+  field_feedback_if_correct:
+    -
+      value: '<p>Correct! "Needs grading" appears when a lesson includes activities that cannot be auto-graded — typically free_text or free_text_feedback activities where a teacher must review and score the student''s open-ended response.</p>'
+      format: filtered_html
+  field_feedback_if_wrong:
+    -
+      value: '<p>The "<strong>Needs grading</strong>" status means the lesson contains one or more activities requiring <strong>manual</strong> (teacher) evaluation — for example, free-text responses. The lesson will remain in this status until a teacher reviews and grades all such activities.</p>'
+      format: filtered_html
+  field_question_text:
+    -
+      value: '<p>A lesson in [Needs grading] status contains activities that require [manual] grading by a teacher.</p>'
+      format: filtered_html

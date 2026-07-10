@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 0e5642a9-039f-46ed-9e0e-e69b5f89d68d
+  bundle: fill_in_the_blanks_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Free Navigation and activity order'
+  created:
+    -
+      value: 1783691289
+  field_distraction_words:
+    -
+      value: randomly
+    -
+      value: automatically
+  field_feedback_if_correct:
+    -
+      value: '<p>Correct! With Free Navigation <strong>disabled</strong> (the default), students move through activities in order — they cannot skip ahead. With Free Navigation <strong>enabled</strong>, students can jump to any activity at any time. Use the disabled mode for structured learning paths; use the enabled mode for exploratory or reference content.</p>'
+      format: filtered_html
+  field_feedback_if_wrong:
+    -
+      value: '<p>Free Navigation <strong>disabled</strong> (default) → sequential order is enforced. Free Navigation <strong>enabled</strong> → students can move freely between any activities. The words "randomly" and "automatically" do not describe Free Navigation — random activity <em>order</em> is a separate lesson-level randomization setting.</p>'
+      format: filtered_html
+  field_question_text:
+    -
+      value: '<p>Free Navigation disabled → students progress through activities [sequentially]. Free Navigation enabled → students can move [freely].</p>'
+      format: filtered_html

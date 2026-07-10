@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.select_single.answers
+    - field.field.lms_activity.select_single.question
+    - lms.lms_activity_type.select_single
+  module:
+    - text
+id: lms_activity.select_single.default
+targetEntityType: lms_activity
+bundle: select_single
+mode: default
+content:
+  question:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  answers: true
+  name: true
+  uid: true

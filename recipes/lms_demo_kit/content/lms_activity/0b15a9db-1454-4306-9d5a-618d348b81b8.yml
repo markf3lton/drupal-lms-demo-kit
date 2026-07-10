@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: 0b15a9db-1454-4306-9d5a-618d348b81b8
+  bundle: select_multiple_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Content hierarchy elements'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: Activities
+      correct: true
+    -
+      answer: Lessons
+      correct: true
+    -
+      answer: Courses
+      correct: true
+    -
+      answer: Classes
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! The three-level content hierarchy is: Courses → Lessons → Activities. Classes exist outside this hierarchy — they are student management groups, not content containers.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>The content hierarchy has exactly three levels: <strong>Courses → Lessons → Activities</strong>. <strong>Classes</strong> are not part of the content hierarchy. They are optional groups of students (cohorts) enrolled in a course — a student management tool, not a content level.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Which of the following are part of the Drupal LMS <strong>content hierarchy</strong>? Select all that apply.</p>'
+      format: filtered_html

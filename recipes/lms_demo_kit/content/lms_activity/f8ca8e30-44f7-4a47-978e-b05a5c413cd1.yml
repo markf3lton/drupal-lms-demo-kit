@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: lms_activity
+  uuid: f8ca8e30-44f7-4a47-978e-b05a5c413cd1
+  bundle: select_single_feedback
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: 'Consequences of changing a shared activity'
+  created:
+    -
+      value: 1783691289
+  answers:
+    -
+      answer: 'The change affects all three lessons immediately'
+      correct: true
+    -
+      answer: 'The change only affects the lesson you edited it from'
+      correct: false
+    -
+      answer: 'Drupal LMS automatically creates a copy for each lesson'
+      correct: false
+    -
+      answer: 'You must approve the change in each lesson separately'
+      correct: false
+  feedback_if_correct:
+    -
+      value: '<p>Correct! Activities are shared entities. Any edit is immediately reflected in every lesson that references the activity. This is by design — it ensures consistency. Use the clone function when you need an independent version for one lesson.</p>'
+      format: filtered_html
+  feedback_if_wrong:
+    -
+      value: '<p>Because activities are <strong>shared</strong>, the change is immediately visible in <strong>all three lessons</strong>. There is no lesson-level copy, no automatic clone, and no approval step. This is the intended behaviour — it keeps all instances consistent with a single edit. If you need a different version in one lesson, clone the activity first.</p>'
+      format: filtered_html
+  question:
+    -
+      value: '<p>Scenario: You have created an activity called "What is Drupal LMS?" and added it to three different lessons. You now edit the activity to update the question text.</p><p>What happens to the three lessons?</p>'
+      format: filtered_html

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.bool_expected
+    - lms.lms_activity_type.fields_demo
+id: lms_activity.fields_demo.bool_expected
+field_name: bool_expected
+entity_type: lms_activity
+bundle: fields_demo
+label: 'Correct answer'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'True'
+  off_label: 'False'
+field_type: boolean

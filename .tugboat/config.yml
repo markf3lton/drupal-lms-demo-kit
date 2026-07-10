@@ -1,0 +1,57 @@
+# Tugboat configuration for the Drupal LMS Demo Kit.
+# https://docs.tugboatqa.com/starter-configs/tutorials/drupal-10/
+#
+# Previews import the baseline demo database from .tugboat/database.sql.gz
+# on every full rebuild (init), then bring code/config up to date on every
+# build. To refresh the baseline: ddev export-db --file=.tugboat/database.sql.gz
+services:
+  database:
+    image: tugboatqa/mariadb:11.8
+
+  php:
+    image: tugboatqa/php:8.4-apache
+    default: true
+    depends: database
+
+    commands:
+      init:
+        - docker-php-ext-install opcache
+        - a2enmod headers rewrite
+        # MariaDB's TLS defaults break the mysql CLI client otherwise.
+        # https://docs.tugboatqa.com/troubleshooting/mysql-ssl-disabled/index.html
+        - |
+          cat > /etc/my.cnf <<'EOF'
+          [client]
+          skip-ssl = true
+          EOF
+        - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
+        # Make Drupal read the Tugboat database settings:
+        - ln -snf "${TUGBOAT_ROOT}/.tugboat/settings.tugboat.php" "${TUGBOAT_ROOT}/web/sites/default/settings.local.php"
+
+        # Wait for the database container before importing.
+        - |
+          echo "Waiting for database..."
+          until mysql -h database -u tugboat -ptugboat -e "SELECT 1;" &>/dev/null; do
+            sleep 2
+          done
+          echo "Database is ready!"
+        # Only runs on a full rebuild (init), not on every routine build/update.
+        - |
+          if [ -f "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" ]; then
+            echo "Importing seeded demo database..."
+            zcat "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" | mysql -h database -u tugboat -ptugboat --ssl=false tugboat
+            echo "Seeded demo database imported."
+          else
+            echo "No database dump found - site will be installed from config during build."
+          fi
+
+      build:
+        - composer install --optimize-autoloader
+        - |
+          if vendor/bin/drush status --field=bootstrap 2>/dev/null | grep -q Successful; then
+            vendor/bin/drush updatedb -y
+            vendor/bin/drush config:import -y
+          else
+            vendor/bin/drush site:install --existing-config -y
+          fi
+        - vendor/bin/drush cache:rebuild

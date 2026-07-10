@@ -45,3 +45,5 @@ sites/simpletest
 
 # Ignore multi-site test environment.
 # simpletest
+web/modules/contrib/
+web/sites/default/files/

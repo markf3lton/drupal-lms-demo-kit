@@ -47,3 +47,4 @@ sites/simpletest
 # simpletest
 web/modules/contrib/
 web/sites/default/files/
+web/core/

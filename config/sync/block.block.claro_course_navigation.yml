@@ -1,0 +1,25 @@
+uuid: f4cca1a5-d62d-4b27-93e9-85b58e053283
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+  theme:
+    - claro
+_core:
+  default_config_hash: icZJNHFQO_OhqvoHYAxkfHRc4Z7iwseJWDefP1cXjow
+id: claro_course_navigation
+theme: claro
+region: content
+weight: -2
+provider: null
+plugin: course_steps_block
+settings:
+  id: course_steps_block
+  label: 'Training navigation'
+  label_display: '0'
+  provider: lms
+  context_mapping:
+    user: '@user.current_user_context:current_user'
+    group: '@group.group_route_context:group'
+visibility: {  }

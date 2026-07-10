@@ -1,0 +1,23 @@
+uuid: b249d462-5d0d-4a60-98be-d3eddd8450fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group_relationship.grequest_updated_by
+    - group.relationship_type.lms_course-996ae0cbc1a35b89222ab
+_core:
+  default_config_hash: 5kUIWFsHVMfGKwrier8IOUjW2LPI3yYLE7Bn3QBbDLY
+id: group_relationship.lms_course-996ae0cbc1a35b89222ab.grequest_updated_by
+field_name: grequest_updated_by
+entity_type: group_relationship
+bundle: lms_course-996ae0cbc1a35b89222ab
+label: 'Approved/Rejected by'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings: {  }
+field_type: entity_reference

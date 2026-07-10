@@ -1,0 +1,17 @@
+uuid: 9e4258c0-b2fb-41ca-b4f5-4bce06bcb24c
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_class
+  module:
+    - user
+_core:
+  default_config_hash: Hj-_lcfm-BXWdGyXpAc8qGIt74qg5rmKKSHsjxecDJ8
+id: lms_class-group_membership
+group_type: lms_class
+content_plugin: group_membership
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

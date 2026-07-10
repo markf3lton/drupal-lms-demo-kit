@@ -1,0 +1,19 @@
+uuid: e181270a-9b10-41d3-b11d-65d5f6af9e31
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.lms_class
+  module:
+    - grequest
+    - user
+_core:
+  default_config_hash: kEroRwksNSNRxLj1GqRxPf6Ig6bnz34kDZzrb_0qxz0
+id: lms_class-996ae0cbc1a35b89222ab1
+group_type: lms_class
+content_plugin: group_membership_request
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false
+  remove_group_membership_request: true

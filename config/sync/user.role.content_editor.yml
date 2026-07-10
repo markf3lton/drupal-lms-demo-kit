@@ -7,7 +7,6 @@ dependencies:
   module:
     - contextual
     - file
-    - navigation
     - node
     - path
     - system
@@ -23,7 +22,6 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
-  - 'access navigation'
   - 'administer url aliases'
   - 'create terms in tags'
   - 'create url aliases'

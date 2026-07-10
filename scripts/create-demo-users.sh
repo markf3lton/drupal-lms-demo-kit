@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # Creates the demo accounts for the Drupal LMS demo kit.
-# Run AFTER: drush site:install --existing-config (or on an already-configured site).
 # Roles lms_admin / lms_teacher come from config/sync.
-#
-# Works both on the host (via `ddev drush`) and inside a container where
-# drush is on the PATH (Tugboat, CI). Safe to re-run.
 
 set -e
 

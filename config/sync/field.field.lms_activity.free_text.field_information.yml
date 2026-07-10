@@ -1,0 +1,24 @@
+uuid: 471c52b7-71bd-445c-a701-462949f4fe94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.field_information
+    - filter.format.filtered_html
+    - lms.lms_activity_type.free_text
+  module:
+    - text
+id: lms_activity.free_text.field_information
+field_name: field_information
+entity_type: lms_activity
+bundle: free_text
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - filtered_html
+field_type: text_long

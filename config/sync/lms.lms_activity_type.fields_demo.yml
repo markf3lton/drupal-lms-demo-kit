@@ -1,0 +1,10 @@
+uuid: 424d6d2c-be0e-4a3b-abd5-c725acb04aba
+langcode: en
+status: true
+dependencies: {  }
+id: fields_demo
+name: 'Many fields'
+description: ''
+pluginId: true_false
+pluginConfiguration: {  }
+defaultMaxScore: 1

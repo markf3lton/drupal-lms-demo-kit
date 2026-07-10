@@ -31,6 +31,7 @@ module:
   layout_discovery: 0
   link: 0
   lms: 0
+  lms_answer_plugins: 0
   lms_certificate: 0
   lms_certificate_entity: 0
   lms_classes: 0

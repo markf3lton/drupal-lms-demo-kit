@@ -1,4 +1,4 @@
-uuid: b779b115-2cee-44ec-899a-e511cddec4b9
+uuid: 4c9e7f6b-0728-4943-a03e-55ede779317c
 langcode: en
 status: true
 dependencies:
@@ -99,9 +99,13 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-      tags: {  }
+        - user
+        - user.permissions
+      tags:
+        - 'config:group.type.lms_course'
   page_1:
     id: page_1
     display_title: Page
@@ -113,6 +117,10 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-      tags: {  }
+        - user
+        - user.permissions
+      tags:
+        - 'config:group.type.lms_course'

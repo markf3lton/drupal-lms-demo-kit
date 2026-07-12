@@ -31,7 +31,7 @@ create_user "LMS Teacher" "lms.teacher@example.com"
 $DRUSH user:role:add lms_teacher "LMS Teacher"
 
 # 3. Student roster (authenticated users; Group handles course access)
-for NAME in "Molly Larkins" "John Smith" "Diego Ramos" "Emma Chen" "Nina Patel" "Sam Carter"; do
+for NAME in "Molly Larkins" "Jan Kowalski" "Diego Ramos" "Emma Chen" "Nina Patel" "Sam Carter"; do
   MAIL=$(echo "$NAME" | tr '[:upper:] ' '[:lower:].')
   create_user "$NAME" "${MAIL}@example.com"
 done

@@ -1,6 +1,6 @@
 # Drupal LMS Demo Kit
 
-A demo kit for [Drupal LMS](https://www.drupal.org/project/lms). The installation and setup guide within [the official documentation](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms) is canonical; this kit gets you up and running quickly.
+A demo kit for [Drupal LMS](https://www.drupal.org/project/lms). Gets you up and running quickly. Follows the installation guide within [the official documentation](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms).
 
 ## Choose your path
 
@@ -10,7 +10,7 @@ A demo kit for [Drupal LMS](https://www.drupal.org/project/lms). The installatio
 | Apply LMS to an existing Drupal site | [Recipe](#recipe) |
 | Build your own demo like this one | [docs/build-this-kit.md](docs/build-this-kit.md) |
 | Share a live preview link | [docs/tugboat.md](docs/tugboat.md) |
-| Maintain or fork this demo kit | [docs/maintainers-workflow.md](docs/maintainers-workflow.md) |
+| Maintain or fork this kit | [docs/maintainers-workflow.md](docs/maintainers-workflow.md) |
 
 ## Repo layout
 
@@ -52,8 +52,7 @@ ddev composer install
 ddev drush site:install --existing-config -y
 ./scripts/create-demo-users.sh
 
-# Log in as "LMS Admin" and import the demo course(s)
-# Navigate to LMS > Import courses, and select the "course_creators_guide_en_v1.zip" from assets/courses
+# Import the demo course (assets/courses) at LMS > Import courses:
 ddev drush uli --name="LMS Admin" /admin/lms
 
 # Or, skip all of the above and import the seeded demo database

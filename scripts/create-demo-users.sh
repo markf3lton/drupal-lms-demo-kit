@@ -2,6 +2,8 @@
 # Creates the demo accounts for the Drupal LMS demo kit.
 # Roles lms_admin / lms_teacher come from config/sync.
 
+echo "Creating: LMS Admin (lms_admin role), LMS Teacher (lms_teacher role), six demo students. Grant the lms_admin role to user 1."
+
 set -e
 
 if command -v ddev >/dev/null 2>&1 && [ -f .ddev/config.yaml ]; then

@@ -2,7 +2,7 @@
 
 How to iterate on this kit without degrading the starter kit. Applies equally if you forked this repo.
 
-## Branches
+### Branches
 
 | Branch | Role | Discipline |
 | :--- | :--- | :--- |
@@ -11,13 +11,13 @@ How to iterate on this kit without degrading the starter kit. Applies equally if
 
 Early tags mark the pre-LMS Drupal baseline. To take the project in a different direction without starting over, branch from one: `git checkout -b new-direction 0.03`.
 
-## Merge gate (`lms` → `main`)
+### Merge gate (`lms` → `main`)
 
 - Does the starter kit need this, or only my demo? Recipe fixes and genuinely better defaults: kit. Modules or themes added for a specific audience: demo.
 - Does it add a setup step, credential, or prerequisite to the Quick Start? If yes, it probably stays on `lms`.
 - If long-lived divergence accumulates on `lms` (modules never merging, audience-specific themes/courses), move the demo to a private downstream repo and keep this repo as the lean upstream.
 
-## When to use which install path
+### When to use which install path
 
 | Path | Use when | Notes |
 | :--- | :--- | :--- |
@@ -26,7 +26,7 @@ Early tags mark the pre-LMS Drupal baseline. To take the project in a different 
 | `ddev drush recipe recipes/lms_demo_kit` | Adding LMS to a site that already exists | Additive; never deletes existing config. Test against vanilla `standard`. |
 | `ddev snapshot restore <name>` | Resetting between local demo runs | Fastest of all; local only. |
 
-## Daily iteration (on `lms`, local)
+### Daily iteration (on `lms`, local)
 
 ```shell
 ddev snapshot --name=before-experiment   # before risky work
@@ -41,7 +41,7 @@ ddev snapshot restore before-experiment  # bail out if needed
 
 The database is the working copy; `config/sync/` is the source of truth. Export early, commit small. Content (courses, users, enrollments) is not config — it lives only in the database until captured by the refresh ritual.
 
-## Refresh ritual
+### Refresh ritual
 
 When the demo-ready state changes, refresh the derived artifacts together:
 
@@ -68,7 +68,7 @@ The `--structure-tables-key=common` dump keeps the schema for the transient tabl
 
 Recipe `content/` is not part of this ritual — it carries a minimal starter set, revised deliberately and rarely, not as a side effect of demo iteration.
 
-## Which artifact updates when
+### Which artifact updates when
 
 | Changed | Update | Notes |
 | :--- | :--- | :--- |
@@ -78,7 +78,7 @@ Recipe `content/` is not part of this ritual — it carries a minimal starter se
 | Modules/themes | `composer.json` + `composer.lock`; export config after enabling | Merge gate applies before `main` |
 | Recipe (config or content) | `recipes/lms_demo_kit/`; re-test against clean install | See below |
 
-## Recipe maintenance
+### Recipe maintenance
 
 The recipe must apply cleanly to a vanilla site, not just this repo. After any recipe change:
 
@@ -93,13 +93,34 @@ ddev snapshot restore before-recipe-test
 
 Recipe config is sanitized — no `uuid:`, no `_core:` blocks. Strip them again when copying fresh files from `config/sync/`.
 
-## Tugboat
+### Tugboat
 
 Previews import `.tugboat/database.sql.gz` during `init` — see [tugboat.md](tugboat.md), including the Gotchas on stale previews.
 
 - Preview freshness equals dump freshness. Config or content changes without a re-dump produce stale previews.
 - Base Previews clone from `main`'s preview; `main` must stay demo-ready.
 
-## Tags
+### Testing a fresh clone alongside your working copy
+
+```shell
+# In a fresh directory
+git clone https://github.com/markf3lton/drupal-lms-demo-kit.git lms-test
+cd lms-test
+
+# To avoid ddev name conflicts, change the name of the project
+ddev config --project-name=lms-test
+
+ddev start
+ddev composer install
+
+# Seeded demo database (fastest path)
+gunzip -c .tugboat/database.sql.gz | ddev import-db
+ddev drush cr
+
+ddev drush uli
+ddev launch
+```
+
+### Tags
 
 Tag the  milestones on `main`. See [changelog](changelog.md).

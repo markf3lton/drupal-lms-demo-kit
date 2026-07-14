@@ -57,6 +57,7 @@ ddev drush uli --name="LMS Admin" /admin/lms
 
 # Or, skip all of the above and import the seeded demo database
 gunzip -c .tugboat/database.sql.gz | ddev import-db
+ddev drush cr
 ddev drush uli
 ddev launch
 ```

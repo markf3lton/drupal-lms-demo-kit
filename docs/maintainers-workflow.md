@@ -49,10 +49,12 @@ When the demo-ready state changes, refresh the derived artifacts together:
 # 1. Config
 ddev drush config:export -y
 
-# 2. Sanitize, then dump
+# 2. Sanitize, then dump db to .tugboat directory
 ddev drush user:information --uid=1          # check for real email/password
 ddev drush user:password admin '123456'      # neutralize if needed
-ddev export-db --file=.tugboat/database.sql.gz
+ddev drush sql:query "TRUNCATE sessions;"    # clear live sessions (see note)
+ddev drush sql:dump --structure-tables-key=common | gzip > .tugboat/database.sql.gz
+
 
 # 3. Snapshot the new baseline
 ddev snapshot --name=demo-ready
@@ -61,6 +63,8 @@ ddev snapshot --name=demo-ready
 git add config/sync .tugboat/database.sql.gz
 git commit -m "Refresh demo baseline: <what changed>"
 ```
+
+The `--structure-tables-key=common` dump keeps the schema for the transient tables — sessions, cache*, watchdog, search_*, history — but drops their rows. Smaller dump, and no session rows to go stale that might cause `drush uli` errors.
 
 Recipe `content/` is not part of this ritual — it carries a minimal starter set, revised deliberately and rarely, not as a side effect of demo iteration.
 

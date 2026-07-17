@@ -8,6 +8,8 @@ How to iterate on this kit without degrading the starter kit. Applies equally if
 | :--- | :--- | :--- |
 | `main` | The starter kit. | Curated. Changes pass the merge gate. |
 | `lms` | Development and demo iteration. | Unrestricted. |
+| `recipe` | Drupal recipe. | Kept simple, for recipe development. |
+
 
 Early tags mark the pre-LMS Drupal baseline. To take the project in a different direction without starting over, branch from one: `git checkout -b new-direction 0.03`.
 

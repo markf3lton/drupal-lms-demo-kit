@@ -1,0 +1,140 @@
+diff --git a/src/TrainingManager.php b/src/TrainingManager.php
+index d8852fa..aa0f89e 100644
+--- a/src/TrainingManager.php
++++ b/src/TrainingManager.php
+@@ -27,13 +27,6 @@ use Symfony\Component\DependencyInjection\Attribute\AutowireServiceClosure;
+  */
+ class TrainingManager {
+ 
+-  /**
+-   * Static cache of course bundle IDs.
+-   *
+-   * @var string[]|null
+-   */
+-  private ?array $courseBundleIds = NULL;
+-
+   /**
+    * The constructor.
+    */
+@@ -1038,23 +1031,22 @@ class TrainingManager {
+   /**
+    * Get all course bundle IDs that implement CourseInterface.
+    *
++   * Not statically cached: group types can be created later in the same
++   * request, e.g. when a recipe installs LMS and then imports its config.
++   *
+    * @return string[]
+    *   Array of group bundle IDs that implement CourseInterface.
+    */
+   public function getCourseBundleIds(): array {
+-    if ($this->courseBundleIds !== NULL) {
+-      return $this->courseBundleIds;
+-    }
+-
+-    $this->courseBundleIds = [];
++    $course_bundle_ids = [];
+     foreach (($this->bundleInfo)()->getBundleInfo('group') as $bundle_id => $bundle_info) {
+       $class = $bundle_info['class'] ?? NULL;
+       if ($class !== NULL && is_a($class, CourseInterface::class, TRUE)) {
+-        $this->courseBundleIds[] = $bundle_id;
++        $course_bundle_ids[] = $bundle_id;
+       }
+     }
+ 
+-    return $this->courseBundleIds;
++    return $course_bundle_ids;
+   }
+ 
+   /**
+@@ -1070,6 +1062,10 @@ class TrainingManager {
+    */
+   public function loadGroupRelationshipsByCourseBundles(array $properties): array {
+     $properties['group_type'] = $this->getCourseBundleIds();
++    // An empty IN condition is not valid SQL.
++    if ($properties['group_type'] === []) {
++      return [];
++    }
+     return ($this->getStorage)('group_relationship')->loadByProperties($properties);
+   }
+ 
+diff --git a/tests/src/Kernel/CourseBundleIdsTest.php b/tests/src/Kernel/CourseBundleIdsTest.php
+new file mode 100644
+index 0000000..45fca13
+--- /dev/null
++++ b/tests/src/Kernel/CourseBundleIdsTest.php
+@@ -0,0 +1,75 @@
++<?php
++
++declare(strict_types=1);
++
++namespace Drupal\Tests\lms\Kernel;
++
++use Drupal\KernelTests\KernelTestBase;
++use Drupal\lms\TrainingManager;
++use PHPUnit\Framework\Attributes\Group as AttributesGroup;
++
++/**
++ * Tests course bundle lookups when course group types are added at runtime.
++ */
++#[AttributesGroup('lms')]
++final class CourseBundleIdsTest extends KernelTestBase {
++
++  /**
++   * {@inheritdoc}
++   */
++  protected static $modules = [
++    'system',
++    'filter',
++    'field',
++    'flexible_permissions',
++    'group',
++    'lms',
++    'options',
++    'text',
++    'user',
++    'views',
++  ];
++
++  /**
++   * {@inheritdoc}
++   */
++  protected function setUp(): void {
++    parent::setUp();
++
++    $this->installEntitySchema('action');
++    $this->installConfig(['group']);
++    $this->installEntitySchema('user');
++    $this->installEntitySchema('view');
++    $this->installEntitySchema('group');
++    $this->installEntitySchema('group_relationship');
++    $this->installEntitySchema('group_config_wrapper');
++  }
++
++  /**
++   * Tests a course group type created after the first lookup.
++   *
++   * Recipes install modules before importing their config entities, so LMS
++   * code can run before the lms_course group type exists.
++   */
++  public function testCourseBundleCreatedAfterLookup(): void {
++    $training_manager = $this->container->get(TrainingManager::class);
++
++    self::assertSame([], $training_manager->getCourseBundleIds());
++    self::assertSame([], $training_manager->loadGroupRelationshipsByCourseBundles([
++      'plugin_id' => 'group_membership',
++    ]));
++
++    $this->installConfig(['lms']);
++
++    self::assertSame(['lms_course'], $training_manager->getCourseBundleIds());
++    self::assertSame([], $training_manager->loadGroupRelationshipsByCourseBundles([
++      'plugin_id' => 'group_membership',
++    ]));
++
++    // Course routes rebuilt in the same request are limited to course bundles.
++    $this->container->get('router.builder')->rebuild();
++    $route = $this->container->get('router.route_provider')->getRouteByName('lms.course.start');
++    self::assertSame(['lms_course'], $route->getOption('parameters')['group']['bundle']);
++  }
++
++}

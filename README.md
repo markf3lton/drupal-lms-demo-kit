@@ -10,7 +10,6 @@ Demo user accounts are provided (all use `123456`):
 
 | Account | Role |
 | :--- | :--- |
-| admin *(user 1)* | LMS Admin |
 | LMS Admin | LMS Admin |
 | LMS Teacher | LMS Teacher |
 | Molly Larkins | Student (designated demo student) |

@@ -188,3 +188,5 @@ A refresh reverts the preview to its last build snapshot, then runs the build. C
 **Stale-database UUID mismatch after changing build strategy.** `init` does *not* re-run on a routine push — only on first build or an explicit **Rebuild**. If a preview existed before the seeded-database setup landed, its next push will fail `config:import` with a site-UUID mismatch: the config and the committed database agree with each other, but the preview is still running an old database. Fix: trigger a full **Rebuild** (not a retry) from the Tugboat dashboard; further previews are unaffected.
 
 **Base Preview staleness.** If PR previews clone from a Base Preview, the same stale-database problem appears on *every* preview until the Base Preview itself is rebuilt. Rebuild the Base Preview whenever the seeded database changes meaningfully.
+
+**Rebuilding `main`.** Rebuild `main` first and wait until it's ready, then rebuild `lms` and any other previews. They clone from the fresh `main`, so they build faster and use far less storage. If Tugboat won't rebuild `main` ("is a base preview to N other previews"), delete those previews first.

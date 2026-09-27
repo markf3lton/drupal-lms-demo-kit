@@ -121,6 +121,8 @@ List every preview with its ID, status, and URL (the first column is the preview
 tugboat ls previews
 ```
 
+![tugboat ls previews output: the main Base Preview (anchor icon), the lms branch preview, and a PR preview still building, each with its preview ID, status, size, and URL](images/tugboat-ls-previews.webp)
+
 To narrow it to one project:
 
 ```shell

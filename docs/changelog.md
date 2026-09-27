@@ -13,4 +13,5 @@ the commit they were cut from.
 | [0.06](https://github.com/markf3lton/drupal-lms-demo-kit/commit/9cc54135fdbe3a39dd0eccf78b1160133fee1997) | Drupal recipe for LMS with demo content (tested against vanilla standard install) |
 | [0.07](https://github.com/markf3lton/drupal-lms-demo-kit/commit/f87bc914f6c29b9eadbee7d5295533c57958063d) | Tugboat previews from seeded demo database |
 | [0.08](https://github.com/markf3lton/drupal-lms-demo-kit/releases/tag/0.08) | READMEs and docs for builders and maintainers |
+| [0.09](https://github.com/markf3lton/drupal-lms-demo-kit/releases/tag/0.09) | Upgrade to Drupal LMS 1.2.3 (this needed a patch for [#3626214](https://www.drupal.org/i/3626214)), upgrade Drupal Core 11.4.8 |
 

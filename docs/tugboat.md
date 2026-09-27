@@ -22,6 +22,7 @@ This page covers only what's specific to this kit. For everything else refer to 
 - **Database settings via symlink.** Drupal needs Tugboat's database credentials. `init` symlinks `.tugboat/settings.tugboat.php` to `web/sites/default/settings.local.php`, which the stock `settings.php` includes if present. Hosting concerns stay in the hosting config.
 - **Seeded database when available.** `init` imports `.tugboat/database.sql.gz` if it exists, so previews boot with demo users, courses, and rosters in place. For simplicity.
 - **From-config fallback.** On branches without a database dump, `build` detects the missing install and runs `site:install --existing-config` instead.
+- **No usable user 1 password.** `build` gives user 1 a new random password that nobody knows. The demo accounts in the README are for visitors; the maintainer gets in with `drush uli` via `tugboat shell` (see below).
 
 The two files in full — `.tugboat/config.yml`:
 
@@ -78,6 +79,8 @@ services:
           else
             vendor/bin/drush site:install --existing-config -y
           fi
+        # User 1 gets an unknown random password on every build; log in with drush uli via tugboat shell.
+        - vendor/bin/drush php:eval '$u = \Drupal\user\Entity\User::load(1); $u->setPassword(\Drupal\Component\Utility\Crypt::randomBytesBase64(32)); $u->save();'
         - vendor/bin/drush cache:rebuild
 ```
 

@@ -54,4 +54,6 @@ services:
           else
             vendor/bin/drush site:install --existing-config -y
           fi
+        # User 1 gets an unknown random password on every build; log in with drush uli via tugboat shell.
+        - vendor/bin/drush php:eval '$u = \Drupal\user\Entity\User::load(1); $u->setPassword(\Drupal\Component\Utility\Crypt::randomBytesBase64(32)); $u->save();'
         - vendor/bin/drush cache:rebuild

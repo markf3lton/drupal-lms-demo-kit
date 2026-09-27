@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^2",
         "drupal/admin_toolbar": "^3.6",
         "drupal/autologout": "^2.0",
         "drupal/core-composer-scaffold": "^11.4",
@@ -24,7 +25,7 @@
         "drupal/core-recommended": "^11.4",
         "drupal/default_content": "^2.0@alpha",
         "drupal/grequest": "*@RC",
-        "drupal/lms": "^1.1",
+        "drupal/lms": "^1.2",
         "drupal/lms_certificate": "@dev",
         "drupal/lms_certificate_entity": "@dev",
         "drupal/lms_membership_request": "*@alpha",
@@ -47,7 +48,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
             "php-tuf/composer-integration": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -109,6 +111,11 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "patches": {
+            "drupal/lms": {
+                "Stale course bundle cache breaks recipes that install LMS (https://www.drupal.org/i/3626214)": "patches/lms-3626214-course-bundle-ids-stale-cache.patch"
+            }
         }
     },
     "require-dev": {

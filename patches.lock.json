@@ -1,0 +1,17 @@
+{
+    "_hash": "cbd36378c567f1b7cbed0fd2eb7efc3db6dae0ca28e8b2b56cb6c52bc81fa936",
+    "patches": {
+        "drupal/lms": [
+            {
+                "package": "drupal/lms",
+                "description": "Stale course bundle cache breaks recipes that install LMS (https://www.drupal.org/i/3626214)",
+                "url": "patches/lms-3626214-course-bundle-ids-stale-cache.patch",
+                "sha256": "3fb031ab6b2c91e56fd9c00c919ddf29a252c1eefcd7b025c38b34d177758e06",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
+}

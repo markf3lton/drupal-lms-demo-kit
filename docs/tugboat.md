@@ -17,11 +17,12 @@ This page covers only what's specific to this kit. For everything else refer to 
 
 ## How this config works
 
-`.tugboat/config.yml` provisions previews in two phases: **`init`** runs once when a preview's containers are first created, while **`build`** runs on every push and brings code and config up to date.
+`.tugboat/config.yml` provisions previews in two phases: **`init`** runs once when a preview's containers are first created, while **`build`** runs on every build or refresh and brings code and config up to date. PR previews build on every push; branch previews (built from the **Branches** tab) only update when you refresh them.
 
 - **Database settings via symlink.** Drupal needs Tugboat's database credentials. `init` symlinks `.tugboat/settings.tugboat.php` to `web/sites/default/settings.local.php`, which the stock `settings.php` includes if present. Hosting concerns stay in the hosting config.
 - **Seeded database when available.** `init` imports `.tugboat/database.sql.gz` if it exists, so previews boot with demo users, courses, and rosters in place. For simplicity.
 - **From-config fallback.** On branches without a database dump, `build` detects the missing install and runs `site:install --existing-config` instead.
+- **No usable user 1 password.** `build` gives user 1 a new random password that nobody knows. The demo accounts in the README are for visitors; the maintainer gets in with `drush uli` via `tugboat shell` (see below).
 
 The two files in full — `.tugboat/config.yml`:
 
@@ -78,6 +79,8 @@ services:
           else
             vendor/bin/drush site:install --existing-config -y
           fi
+        # User 1 gets an unknown random password on every build; log in with drush uli via tugboat shell.
+        - vendor/bin/drush php:eval '$u = \Drupal\user\Entity\User::load(1); $u->setPassword(\Drupal\Component\Utility\Crypt::randomBytesBase64(32)); $u->save();'
         - vendor/bin/drush cache:rebuild
 ```
 
@@ -105,6 +108,78 @@ $settings['config_sync_directory'] = getenv('TUGBOAT_ROOT') . '/config/sync';
 // Prevent Drupal from making the sites/default directory unwritable.
 $settings['skip_permissions_hardening'] = TRUE;
 ```
+
+## Working from the command line
+
+The [Tugboat CLI](https://docs.tugboatqa.com/tugboat-cli/) does everything the dashboard does. The IDs below are this kit's; yours will differ.
+
+### Find your preview IDs
+
+List every preview with its ID, status, and URL (the first column is the preview ID):
+
+```shell
+tugboat ls previews
+```
+
+To narrow it to one project:
+
+```shell
+tugboat ls projects
+tugboat ls previews project=6a51309cade5ea8187087322
+```
+
+### Open a shell on a preview
+
+For example, the `main` Base Preview:
+
+```shell
+tugboat shell 6a5130b4ade5ea818708743e
+```
+
+The shell opens in `/var/lib/tugboat`, the repo root (`$TUGBOAT_ROOT`).
+
+### Run drush
+
+`drush` isn't on the path. From the repo root, where the shell opens:
+
+```shell
+vendor/bin/drush status
+```
+
+Or from the docroot:
+
+```shell
+cd $DOCROOT
+../vendor/drush/drush/drush status
+```
+
+The docroot `/var/www/html` is a symlink to `web/`. Running `../vendor/...` from it works, but `cd ..` lands in `/var/www`, not the repo root.
+
+To type plain `drush` for the rest of the session:
+
+```shell
+alias drush=/var/lib/tugboat/vendor/bin/drush
+```
+
+### Log in as user 1
+
+Maintainer only, and only this way. Run it in the shell of the preview you're logging into:
+
+```shell
+vendor/bin/drush uli --uri="$TUGBOAT_DEFAULT_SERVICE_URL"
+```
+
+A link only works on the preview that generated it, and only until user 1's password or last login changes. Every build or refresh changes the password, so generate a new link afterwards.
+
+### Update a branch preview
+
+Branch previews (like `lms`) don't update on push. Pull the new code in with a refresh:
+
+```shell
+tugboat refresh 6ab91170190a266bdf1fd4ae
+```
+
+A refresh reverts the preview to its last build snapshot, then runs the build. Content or changes made in the preview since its last build are lost. Treat preview data as disposable.
 
 ## Gotchas
 

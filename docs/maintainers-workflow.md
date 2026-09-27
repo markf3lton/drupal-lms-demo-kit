@@ -53,7 +53,7 @@ ddev drush config:export -y
 
 # 2. Sanitize, then dump db to .tugboat directory
 ddev drush user:information --uid=1          # check for real email/password
-ddev drush user:password admin '123456'      # neutralize if needed
+ddev drush user:password admin "$(openssl rand -base64 32)"   # random, never the demo password
 ddev drush sql:query "TRUNCATE sessions;"    # clear live sessions (see note)
 ddev drush sql:dump --structure-tables-key=common | gzip > .tugboat/database.sql.gz
 

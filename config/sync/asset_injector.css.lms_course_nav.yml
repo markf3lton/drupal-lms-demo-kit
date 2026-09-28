@@ -1,0 +1,46 @@
+uuid: d0f40558-3b99-4b74-9613-d85c5051a86e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: lms_course_nav
+label: 'LMS course nav'
+code: |-
+  /* Course nav on the left at desktop widths; smaller widths keep Olivero's default stacking. */
+  @media (min-width: 62.5rem) {
+    .sidebar-grid > .region--sidebar {
+      grid-row: 1;
+      grid-column: 1 / 5;
+    }
+    .sidebar-grid > .site-main {
+      grid-row: 1;
+      grid-column: 6 / 15;
+    }
+  }
+
+  /* Size the course name for a sidebar. */
+  .lms-course-navigation-container .lms-course-navigation-title {
+    font-size: 1.25rem;
+  }
+
+  /* Page titles 8px smaller than Olivero's default at tablet widths and up. */
+  @media (min-width: 43.75rem) {
+    .page-title {
+      font-size: 3.25rem;
+      line-height: 1.15;
+    }
+  }
+
+  /* Make the fill-in-the-blank activity not break lines funny. */
+  .question-text p { display: inline; }
+  .question-text .drop-zone { display: inline-block; vertical-align: baseline; }
+media: all
+preprocess: true
+conditions:
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: olivero
+contexts: {  }
+conditions_require_all: true

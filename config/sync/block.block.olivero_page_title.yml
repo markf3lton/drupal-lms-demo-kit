@@ -2,6 +2,8 @@ uuid: 04333458-eef0-454e-bbca-5569851aa789
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - olivero
 _core:
@@ -17,4 +19,8 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/course/*'

@@ -112,9 +112,6 @@
             ]
         },
         "patches": {
-            "drupal/lms": {
-                "Stale course bundle cache breaks recipes that install LMS (https://www.drupal.org/i/3626214)": "patches/lms-3626214-course-bundle-ids-stale-cache.patch"
-            }
         }
     },
     "require-dev": {

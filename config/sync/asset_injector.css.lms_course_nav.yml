@@ -44,6 +44,13 @@ code: |-
       line-height: 1.25;
     }
   }
+
+  /* Breadcrumb lines up with the content column beside the course nav. */
+  @media (min-width: 62.5rem) {
+    .path-course .region--breadcrumb > * {
+      grid-column: 6 / 15;
+    }
+  }
 media: all
 preprocess: true
 conditions:

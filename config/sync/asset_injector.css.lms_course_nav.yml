@@ -35,6 +35,15 @@ code: |-
   /* Make the fill-in-the-blank activity not break lines funny. */
   .question-text p { display: inline; }
   .question-text .drop-zone { display: inline-block; vertical-align: baseline; }
+
+  /* Compact activity titles, top-aligned with the course nav. */
+  @media (min-width: 43.75rem) {
+    .path-course .page-title {
+      margin-top: 0;
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+  }
 media: all
 preprocess: true
 conditions:

@@ -3,3 +3,5 @@ _core:
 allow_to_enter_ungraded: false
 use_revisions: false
 show_editor_reset_button: true
+langcode: en
+activity_page_title: '[lms_lesson:label] - [lms_activity:label]'

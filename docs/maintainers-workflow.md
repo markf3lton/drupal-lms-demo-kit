@@ -8,7 +8,6 @@ How to iterate on this kit without degrading the starter kit. Applies equally if
 | :--- | :--- | :--- |
 | `main` | The starter kit. | Curated. Changes pass the merge gate. |
 | `lms` | Development and demo iteration. | Unrestricted. |
-| `recipe` | Drupal recipe. | Kept simple, for recipe development. |
 
 
 Early tags mark the pre-LMS Drupal baseline. To take the project in a different direction without starting over, branch from one: `git checkout -b new-direction 0.03`.
@@ -94,6 +93,8 @@ ddev snapshot restore before-recipe-test
 ```
 
 Recipe config is sanitized — no `uuid:`, no `_core:` blocks. Strip them again when copying fresh files from `config/sync/`.
+
+Recipe work happens in `recipes/lms_demo_kit/` on any branch. Once it reaches `main`, publish it to [drupal.org/project/lms_demo_kit](https://www.drupal.org/project/lms_demo_kit).
 
 ### Tugboat
 

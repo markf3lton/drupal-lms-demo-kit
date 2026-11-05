@@ -1,6 +1,6 @@
 # Build This Kit
 
-The commands that produced this repo, in order.
+The best way to learn is by doing. This quick start repo helps me demo the features of LMS, and  take it in new directions, but you can build this kit yourself by following the steps below, in order.
 
 ## Set up Drupal
 

@@ -178,7 +178,7 @@ A link only works on the preview that generated it, and only until user 1's pass
 Branch previews (like `lms`) don't update on push. Pull the new code in with a refresh:
 
 ```shell
-tugboat refresh 6ab91170190a266bdf1fd4ae
+tugboat refresh 6aebcd14f3375230f31467d4
 ```
 
 A refresh reverts the preview to its last build snapshot, then runs the build. Content or changes made in the preview since its last build are lost. Treat preview data as disposable.

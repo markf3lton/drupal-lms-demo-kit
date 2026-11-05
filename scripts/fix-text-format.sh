@@ -2,8 +2,10 @@
 
 ddev drush eval '
 $db = \Drupal::database();
+// Only free_text activities have the text_format field.
 $activities = $db->select("lms_activity_field_data", "a")
   ->fields("a", ["id", "vid", "type", "langcode"])
+  ->condition("type", "free_text")
   ->execute()
   ->fetchAll();
 
@@ -23,7 +25,8 @@ foreach ($activities as $activity) {
         "revision_id" => $activity->vid,
         "langcode" => $activity->langcode,
         "delta" => 0,
-        "text_format_target_id" => "full_html",
+        // Students write in this format, so never full_html.
+        "text_format_target_id" => "basic_html",
       ])
       ->execute();
     $inserted++;

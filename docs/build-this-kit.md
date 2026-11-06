@@ -137,7 +137,8 @@ See `assets/courses` in this repo.
 
 ```shell
 ddev drush user:information --uid=1     # confirm no real email/password
-ddev export-db --file=.tugboat/database.sql.gz
+ddev drush user:password admin "$(openssl rand -base64 32)"
+ddev drush sql:dump --structure-tables-list='cache,cache_*,history,search_*,sessions,watchdog,key_value_expire,flood,semaphore' | gzip > .tugboat/database.sql.gz
 ddev snapshot --name=demo-ready
 
 git add scripts/ assets/ .tugboat/

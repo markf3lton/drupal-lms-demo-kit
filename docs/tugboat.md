@@ -32,7 +32,7 @@ The two files in full — `.tugboat/config.yml`:
 #
 # Previews import the baseline demo database from .tugboat/database.sql.gz
 # on every full rebuild (init), then bring code/config up to date on every
-# build. To refresh the baseline: ddev export-db --file=.tugboat/database.sql.gz
+# build. To refresh the baseline, follow the refresh ritual in docs/maintainers-workflow.md.
 services:
   database:
     image: tugboatqa/mariadb:11.8

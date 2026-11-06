@@ -1,0 +1,11 @@
+diff --git a/templates/views/views-exposed-form--courses.html.twig b/templates/views/views-exposed-form--courses.html.twig
+index d1c51ab..fc1095a 100644
+--- a/templates/views/views-exposed-form--courses.html.twig
++++ b/templates/views/views-exposed-form--courses.html.twig
+@@ -18,5 +18,5 @@
+ {% endif %}
+ <div class="form--inline clearfix">
+     {{form.actions}}
+-    {{ form }}
++    {{ form|without('actions') }}
+ </div>

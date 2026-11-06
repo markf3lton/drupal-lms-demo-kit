@@ -1,4 +1,17 @@
 {
-    "_hash": "6142bfcb78f54dfbf5247ae5e463f25bdb8fff1890806e2e45aa81a59c211653",
-    "patches": []
+    "_hash": "85305a50f143b3dacefbdc93e9b8a69ec0cb88986d3eb0882f0c34578939111c",
+    "patches": {
+        "drupal/greendale": [
+            {
+                "package": "drupal/greendale",
+                "description": "Exposed form prints its buttons twice (views-exposed-form--courses.html.twig)",
+                "url": "patches/greendale-exposed-form-duplicate-actions.patch",
+                "sha256": "751fe99cf6fb1b23202d96eff2483da5a060fb083f29759adbd71f4f5235453d",
+                "depth": 1,
+                "extra": {
+                    "provenance": "root"
+                }
+            }
+        ]
+    }
 }

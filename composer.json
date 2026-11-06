@@ -20,11 +20,13 @@
         "drupal/admin_toolbar": "^3.6",
         "drupal/asset_injector": "^2.21",
         "drupal/autologout": "^2.0",
+        "drupal/better_exposed_filters": "^7.2",
         "drupal/core-composer-scaffold": "^11.4",
         "drupal/core-project-message": "^11.4",
         "drupal/core-recipe-unpack": "^11.4",
         "drupal/core-recommended": "^11.4",
         "drupal/default_content": "^2.0@alpha",
+        "drupal/greendale": "^1.0",
         "drupal/grequest": "*@RC",
         "drupal/lms": "^1.2",
         "drupal/lms_certificate": "@dev",
@@ -114,6 +116,9 @@
             ]
         },
         "patches": {
+            "drupal/greendale": {
+                "Exposed form prints its buttons twice (views-exposed-form--courses.html.twig)": "patches/greendale-exposed-form-duplicate-actions.patch"
+            }
         }
     },
     "require-dev": {

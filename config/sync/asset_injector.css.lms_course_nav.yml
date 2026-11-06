@@ -5,7 +5,7 @@ dependencies:
   module:
     - system
 id: lms_course_nav
-label: 'LMS course nav'
+label: 'Olivero - Course nav tweaks'
 code: |-
   /* Course nav on the left at desktop widths; smaller widths keep Olivero's default stacking. */
   @media (min-width: 62.5rem) {
@@ -50,6 +50,23 @@ code: |-
     .path-course .region--breadcrumb > * {
       grid-column: 6 / 15;
     }
+  }
+
+  /* Catalog: less space between the page title and the course grid. */
+  .path-frontpage .region--content-above .page-title,
+  .path-courses .region--content-above .page-title {
+    margin-block-end: 0;
+    line-height: 1.1;
+  }
+
+  /* Catalog: less space between the header and the page title. */
+  .path-frontpage .main-content__container,
+  .path-courses .main-content__container {
+    padding-block-start: var(--sp2);
+  }
+  .path-frontpage .region--content-above .page-title,
+  .path-courses .region--content-above .page-title {
+    margin-block-start: 0;
   }
 media: all
 preprocess: true

@@ -1,0 +1,20 @@
+uuid: c243a203-7f38-4783-a4ac-776ed404b69a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - greendale
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: greendale_primary_admin_actions
+theme: greendale
+region: highlighted
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

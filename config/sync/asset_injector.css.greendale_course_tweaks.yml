@@ -1,0 +1,25 @@
+uuid: 280ae90a-0f51-4938-8d0e-216c0396c0c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: greendale_course_tweaks
+label: 'Greendale - Course nav tweaks'
+code: |-
+  .lms-lesson--label {
+    display: none;
+  }
+
+  .lms-course__title {
+    display: none;
+  }
+media: all
+preprocess: true
+conditions:
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: greendale
+contexts: {  }
+conditions_require_all: true

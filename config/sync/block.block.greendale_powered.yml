@@ -1,0 +1,22 @@
+uuid: 56da7e39-20f0-4241-8858-998022da84db
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - greendale
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: greendale_powered
+theme: greendale
+region: footer
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,28 @@
+uuid: c962c8d0-c93b-4d95-b43a-b79dd81904a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.courses
+  module:
+    - system
+    - views
+  theme:
+    - greendale
+id: greendale_exposedformcoursescatalog
+theme: greendale
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:courses-catalog'
+settings:
+  id: 'views_exposed_filter_block:courses-catalog'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "<front>\r\n/courses"

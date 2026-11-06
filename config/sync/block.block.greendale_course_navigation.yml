@@ -1,0 +1,25 @@
+uuid: fd95a0d8-4a56-401e-9b56-3074f63193cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+  theme:
+    - greendale
+_core:
+  default_config_hash: HXAYWYPymtzEZaWboHtwl-oN0Y2En4VkWUlQxCw2_54
+id: greendale_course_navigation
+theme: greendale
+region: sidebar_first
+weight: 0
+provider: null
+plugin: course_steps_block
+settings:
+  id: course_steps_block
+  label: 'Course navigation'
+  label_display: '0'
+  provider: lms
+  context_mapping:
+    user: '@user.current_user_context:current_user'
+    group: '@group.group_route_context:group'
+visibility: {  }

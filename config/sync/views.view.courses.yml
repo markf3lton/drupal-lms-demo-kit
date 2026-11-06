@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - group.type.lms_course
+    - taxonomy.vocabulary.category
   module:
+    - better_exposed_filters
     - group
     - lms
+    - taxonomy
 _core:
   default_config_hash: 8G8IYgl3ZlVpyNetip_TMiN1pzHJlDrgm_9Mo_mGuPg
 id: courses
@@ -44,6 +47,56 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              auto_submit_sort_only: false
+              autosubmit_breakpoint: ''
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_textfield_minimum_length: 3
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_category_target_id:
+                plugin_id: bef_links
+                advanced:
+                  sort_options: false
+                  sort_options_method: alphabetical_asc
+                  sort_options_natural: true
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  open_by_default: false
+                  is_secondary: false
+                  no_reset: false
+                  hide_label: false
+                  field_classes: ''
+                select_all_none: false
+                soft_limit: 0
+                soft_limit_label_less: 'Show less'
+                soft_limit_label_more: 'Show more'
+                soft_limit_include_children: false
+                scrollable: false
+                scrollable_height: 300
       access:
         type: none
         options: {  }
@@ -74,19 +127,66 @@ display:
           field: status
           plugin_id: boolean
           value: '1'
+        field_category_target_id:
+          id: field_category_target_id
+          table: group__field_category
+          field: field_category_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_category_target_id_op
+            label: Categories
+            description: ''
+            use_operator: false
+            operator: field_category_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_category_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: category
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       style:
         type: grid_responsive
         options:
+          uses_fields: false
           columns: 3
-          cell_min_width: 250
+          cell_min_width: 200
           grid_gutter: 20
+          alignment: horizontal
       row:
         type: course_card_row
         options:
-          background_image_field: ''
-          media_view_mode: ''
-          description_field: ''
-          description_display_type: full
+          background_image_field: field_course_image
+          image_style: large
+          description_field: field_description
+          description_display_type: summary
       query:
         type: views_query
         options:
@@ -99,28 +199,23 @@ display:
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
-        - user
-        - user.permissions
-      tags:
-        - 'config:group.type.lms_course'
-  page_1:
-    id: page_1
+      tags: {  }
+  catalog:
+    id: catalog
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
+      exposed_block: true
       display_extenders: {  }
       path: courses
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
-        - user
-        - user.permissions
-      tags:
-        - 'config:group.type.lms_course'
+      tags: {  }

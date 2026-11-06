@@ -1,0 +1,23 @@
+uuid: 7b21a9e9-4e27-48fa-a25a-9b2ca2244e29
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.courses
+  module:
+    - views
+  theme:
+    - olivero
+id: olivero_exposedformcoursescatalog
+theme: olivero
+region: content_above
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:courses-catalog'
+settings:
+  id: 'views_exposed_filter_block:courses-catalog'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }

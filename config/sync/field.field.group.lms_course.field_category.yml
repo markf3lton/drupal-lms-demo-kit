@@ -1,0 +1,29 @@
+uuid: df542137-a7c8-4174-ac79-c02762e97fa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_category
+    - group.type.lms_course
+    - taxonomy.vocabulary.category
+id: group.lms_course.field_category
+field_name: field_category
+entity_type: group
+bundle: lms_course
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      category: category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,66 @@
+uuid: 13943ea4-7a99-4108-8cd9-e450da4030f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.lms_course.field_category
+    - field.field.group.lms_course.field_course_image
+    - field.field.group.lms_course.field_description
+    - group.type.lms_course
+  module:
+    - image
+    - lms
+    - text
+id: group.lms_course.default
+targetEntityType: group
+bundle: lms_course
+mode: default
+content:
+  field_category:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_course_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  start_link:
+    type: lms_component_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  changed: true
+  created: true
+  lessons: true
+  membership_validation: true
+  uid: true

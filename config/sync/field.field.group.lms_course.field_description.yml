@@ -1,0 +1,26 @@
+uuid: 1c2e9478-890f-4942-aed7-19c3847989b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_description
+    - filter.format.basic_html
+    - group.type.lms_course
+  module:
+    - text
+id: group.lms_course.field_description
+field_name: field_description
+entity_type: group
+bundle: lms_course
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: true
+  allowed_formats:
+    - basic_html
+field_type: text_with_summary

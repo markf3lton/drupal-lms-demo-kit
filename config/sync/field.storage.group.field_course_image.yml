@@ -1,0 +1,30 @@
+uuid: 6c206d97-0e7c-4085-9ee0-a108ccbd52dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - group
+    - image
+id: group.field_course_image
+field_name: field_course_image
+entity_type: group
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: true
+  uri_scheme: public
+  default_image:
+    uuid: 8de10ddd-1a2c-4709-854b-397816361aac
+    alt: ''
+    title: ''
+    width: 600
+    height: 330
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

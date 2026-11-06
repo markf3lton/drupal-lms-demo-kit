@@ -1,0 +1,96 @@
+uuid: b22944a3-81d0-4684-a9b3-b322c3c07e41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.group.lms_course.field_category
+    - field.field.group.lms_course.field_course_image
+    - field.field.group.lms_course.field_description
+    - group.type.lms_course
+    - image.style.thumbnail
+  module:
+    - image
+    - lms
+    - path
+    - text
+id: group.lms_course.default
+targetEntityType: group
+bundle: lms_course
+mode: default
+content:
+  field_category:
+    type: options_buttons
+    weight: 123
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_course_image:
+    type: image_image
+    weight: 121
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_description:
+    type: text_textarea_with_summary
+    weight: 122
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  free_navigation:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  lessons:
+    type: lms_reference_table
+    weight: 1
+    region: content
+    settings:
+      view_data: lessons_selection.default
+    third_party_settings: {  }
+  membership_validation:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  revisit_mode:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  certificate: true
+  uid: true

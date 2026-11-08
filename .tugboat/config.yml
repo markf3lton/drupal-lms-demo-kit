@@ -46,6 +46,8 @@ services:
           fi
 
       build:
+        # PHP zip extension for lms_yaml course imports (ZipArchive). In build, not init, so previews cloned from an older base preview get it too.
+        - php -m | grep -qx zip || (apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip)
         - composer install --optimize-autoloader
         - |
           if vendor/bin/drush status --field=bootstrap 2>/dev/null | grep -q Successful; then

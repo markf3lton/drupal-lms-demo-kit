@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # Creates the demo accounts for the Drupal LMS demo kit.
-# Roles lms_admin / lms_teacher come from config/sync.
+# Run from the project root. The lms_admin and lms_teacher roles must already exist (from the recipe or config/sync).
 
 echo "Creating: LMS Admin (lms_admin role), LMS Teacher (lms_teacher role), six demo students. Grant the lms_admin role to user 1."
 
 set -e
 
-if command -v ddev >/dev/null 2>&1 && [ -f .ddev/config.yaml ]; then
+# Inside the DDEV container, `ddev` is a stub that prints a hint and exits 0.
+if [ "${IS_DDEV_PROJECT:-}" = "true" ]; then
+  DRUSH="drush"
+elif command -v ddev >/dev/null 2>&1 && [ -f .ddev/config.yaml ]; then
   DRUSH="ddev drush"
 else
   DRUSH="drush"

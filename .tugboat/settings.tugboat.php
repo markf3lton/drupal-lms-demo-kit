@@ -18,3 +18,6 @@ $settings['config_sync_directory'] = getenv('TUGBOAT_ROOT') . '/config/sync';
 
 // Prevent Drupal from making the sites/default directory unwritable.
 $settings['skip_permissions_hardening'] = TRUE;
+
+// No LLM is reachable from Tugboat yet; disable the AI provider so AI answers stay inactive.
+$config['ai_providers_api.provider.ollama_local']['status'] = FALSE;

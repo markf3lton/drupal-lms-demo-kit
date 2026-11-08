@@ -29,6 +29,7 @@
         "drupal/greendale": "^1.0",
         "drupal/grequest": "*@RC",
         "drupal/lms": "^1.2",
+        "drupal/lms_ai": "^1.0@beta",
         "drupal/lms_certificate": "@dev",
         "drupal/lms_certificate_entity": "@dev",
         "drupal/lms_membership_request": "*@alpha",
@@ -39,7 +40,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

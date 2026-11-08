@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2acc1404f8edf31eff803bbce0eb36e1",
+    "content-hash": "8ba0ba28b6474495a797d1325a76bfda",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -578,6 +578,57 @@
             }
         },
         {
+            "name": "drupal/ai_providers_api",
+            "version": "1.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_providers_api.git",
+                "reference": "1.0.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_providers_api-1.0.0-beta4.zip",
+                "reference": "1.0.0-beta4",
+                "shasum": "023d092a0432d565bb851e40fe8fbcd1d3daf172"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta4",
+                    "datestamp": "1793179449",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Integrates Drupal LMS with LLMs.",
+            "homepage": "https://www.drupal.org/project/ai_providers_api",
+            "keywords": [
+                "AI",
+                "Drupal",
+                "LMS"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_providers_api",
+                "issues": "https://www.drupal.org/project/issues/ai_providers_api"
+            }
+        },
+        {
             "name": "drupal/asset_injector",
             "version": "2.21.0",
             "source": {
@@ -792,8 +843,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/better_exposed_filters",
                 "issues": "https://www.drupal.org/project/issues/better_exposed_filters"
-            },
-            "published-time": "2026-10-09T08:59:07+00:00"
+            }
         },
         {
             "name": "drupal/core",
@@ -1818,6 +1868,63 @@
             }
         },
         {
+            "name": "drupal/lms_ai",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lms_ai.git",
+                "reference": "1.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/lms_ai-1.0.0-beta3.zip",
+                "reference": "1.0.0-beta3",
+                "shasum": "1c1d16f3b82c4e2674b642f63ff5ea32e79ae4b2"
+            },
+            "require": {
+                "drupal/ai_providers_api": "*",
+                "drupal/core": "^10.3 || ^11",
+                "drupal/lms": "^1.1.16"
+            },
+            "require-dev": {
+                "drupal/ai_providers_api": "*",
+                "drupal/lms": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.0.0-beta3",
+                    "datestamp": "1791477608",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Grabias",
+                    "homepage": "https://www.drupal.org/u/graber",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Integrates Drupal LMS with LLMs.",
+            "homepage": "https://www.drupal.org/project/lms_ai",
+            "keywords": [
+                "AI",
+                "Drupal",
+                "LMS"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/lms_ai",
+                "issues": "https://www.drupal.org/project/issues/lms_ai"
+            }
+        },
+        {
             "name": "drupal/lms_certificate",
             "version": "1.0.0-alpha3",
             "source": {
@@ -2139,8 +2246,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/nouislider_js/-/tree/15.8.0"
             },
-            "time": "2025-01-03T10:53:20+00:00",
-            "published-time": "2025-01-03T10:00:25+00:00"
+            "time": "2025-01-03T10:53:20+00:00"
         },
         {
             "name": "drupal/state_machine",
@@ -8447,10 +8553,11 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "drupal/default_content": 15,
         "drupal/grequest": 5,
+        "drupal/lms_ai": 10,
         "drupal/lms_certificate": 20,
         "drupal/lms_certificate_entity": 20,
         "drupal/lms_membership_request": 15,
@@ -8461,5 +8568,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.11.0"
+    "plugin-api-version": "2.9.0"
 }

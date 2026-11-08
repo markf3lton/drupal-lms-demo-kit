@@ -1,0 +1,11 @@
+uuid: 46b05980-00f1-43ec-8d59-01f9dd350d66
+langcode: en
+status: true
+dependencies: {  }
+id: ollama_local
+name: 'Ollama (local)'
+pluginId: ollama
+pluginConfiguration:
+  model: 'llama3.2:3b'
+  endpoint_url: ''
+  timeout: 180

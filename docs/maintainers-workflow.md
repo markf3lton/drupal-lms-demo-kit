@@ -123,7 +123,7 @@ Recipe `content/` is not part of this ritual — it carries a minimal starter se
 | :--- | :--- | :--- |
 | Site config | `config/sync/` via `config:export`, commit | Every time |
 | Demo course content | `.tugboat/database.sql.gz` via refresh ritual | Recipe content stays frozen |
-| Demo users / roster | `scripts/create-demo-users.sh` and re-dump DB | Script is source of truth for credentials |
+| Demo users / roster | `scripts/create-demo-users.sh` and re-dump DB | Script is source of truth for credentials; copy it to `recipes/lms_demo_kit/scripts/` too |
 | Modules/themes | `composer.json` + `composer.lock`; `cr`, `updb`, then export config | See "Adding or updating modules" |
 | Patches | `composer.json` `extra.patches`, then `ddev composer patches-relock` | Commit `patches.lock.json` too — composer-patches applies from the lock, not `composer.json` |
 | Course packages | `assets/courses/*.zip` | The `.yml` files must sit at the zip root; Finder's Compress nests them in a folder and the import fails |

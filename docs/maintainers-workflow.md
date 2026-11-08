@@ -144,6 +144,21 @@ ddev snapshot restore before-recipe-test
 
 Recipe config is sanitized — no `uuid:`, no `_core:` blocks. Strip them again when copying fresh files from `config/sync/`.
 
+The recipe is AI-free. The demo kit ships AI answers (`lms_ai`, `ai_providers_api`, the Ollama provider, and any `ai_answer` activity types), but those stay out of `recipes/lms_demo_kit/` so the recipe applies to sites without an LLM. AI activity types declare no module dependency, so nothing stops them being copied by accident. Run the guard before committing a recipe change:
+
+```shell
+./scripts/check-recipe-no-ai.sh
+```
+
+### AI answers (local and Tugboat)
+
+AI config lives in `config/sync` like any other kit feature. Only the provider's endpoint differs per environment, so it's set by settings overrides rather than exported:
+
+- **Local:** `web/sites/default/settings.local.php` (gitignored) points `ai_providers_api.provider.ollama_local` at Ollama on the host: `http://host.docker.internal:11434/api/chat`.
+- **Tugboat:** `.tugboat/settings.tugboat.php` disables the provider. AI activities still render, but "Check answer" reports the provider is disabled and scoring jobs are skipped.
+
+`drush cex` exports the stored values, not the overrides, so leave the endpoint blank in the provider form before exporting.
+
 Recipe work happens in `recipes/lms_demo_kit/` on any branch. Once it reaches `main`, publish it to [drupal.org/project/lms_demo_kit](https://www.drupal.org/project/lms_demo_kit).
 
 ### Tugboat

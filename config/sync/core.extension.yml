@@ -14,6 +14,7 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor5: 0
+  comment: 0
   config: 0
   contextual: 0
   datetime: 0
@@ -37,6 +38,7 @@ module:
   lms: 0
   lms_ai: 0
   lms_ai_answer: 0
+  lms_answer_comments: 0
   lms_answer_plugins: 0
   lms_certificate: 0
   lms_certificate_entity: 0

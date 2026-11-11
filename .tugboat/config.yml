@@ -63,6 +63,17 @@ services:
         - vendor/bin/drush cache:rebuild
         # Apache runs as www-data and must be able to write public files.
         - mkdir -p "${TUGBOAT_ROOT}/web/sites/default/files"
+        # Restore uploaded files the seeded database references; names must match its file_managed URIs.
+        - |
+          FILES="${TUGBOAT_ROOT}/web/sites/default/files"
+          mkdir -p "$FILES/fillpdf" "$FILES/lms_xapi_packages"
+          cp "${TUGBOAT_ROOT}/assets/certificate-of-completion_fill_form_fields.pdf" "$FILES/fillpdf/"
+          ZIP=a-quick-guide-to-the-american-federation-of-teachers-xapi-UVaMDSg3.zip
+          cp "${TUGBOAT_ROOT}/assets/courses/$ZIP" "$FILES/lms_xapi_packages/"
+          # lms_xapi serves the package from a folder named after the zip, non-alphanumerics as underscores.
+          DIR="$FILES/lms_xapi_packages/$(basename "$ZIP" .zip | sed 's/[^a-zA-Z0-9]/_/g')"
+          rm -rf "$DIR" && mkdir -p "$DIR"
+          php -r '$z = new ZipArchive(); $z->open($argv[1]) === TRUE && $z->extractTo($argv[2]) || exit(1);' "$FILES/lms_xapi_packages/$ZIP" "$DIR"
         - chown -R www-data:www-data "${TUGBOAT_ROOT}/web/sites/default/files"
         # Private files (FillPDF templates) live outside the web root.
         - mkdir -p "${TUGBOAT_ROOT}/private"

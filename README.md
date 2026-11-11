@@ -139,3 +139,4 @@ ddev drush cr
 
 - [drupal_lms_ddev](https://github.com/graber-1/drupal_lms_ddev) — The ancestor of this kit's approach
 - [Drupal LMS documentation](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms)
+- "A Quick Guide to the American Federation of Teachers" (`assets/courses/a-quick-guide-to-the-american-federation-of-teachers-xapi-UVaMDSg3.zip`) is adapted from the Wikipedia article [American Federation of Teachers](https://en.wikipedia.org/wiki/American_Federation_of_Teachers) by Wikipedia contributors, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The course is shared under the same license.

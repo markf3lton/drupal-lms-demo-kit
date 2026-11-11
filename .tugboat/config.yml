@@ -46,6 +46,8 @@ services:
           fi
 
       build:
+        # Large config imports need more than PHP's 128M default; applies to drush and Apache.
+        - echo 'memory_limit = 512M' > /usr/local/etc/php/conf.d/zz-memory.ini
         # PHP zip extension for lms_yaml course imports (ZipArchive). In build, not init, so previews cloned from an older base preview get it too.
         - php -m | grep -qx zip || (apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip)
         # pdftk fills the certificate PDF templates for FillPDF.

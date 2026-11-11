@@ -1,0 +1,24 @@
+uuid: e88c129b-b940-440f-bf62-4df79f4f539f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.question
+    - lms.lms_activity_type.ai_graded_answer
+  module:
+    - text
+_core:
+  default_config_hash: 1JRQdjxTE6OsCOulO8-NCDoTqBK7lz8QXEonWcMkI4Y
+id: lms_activity.ai_graded_answer.question
+field_name: question
+entity_type: lms_activity
+bundle: ai_graded_answer
+label: Question
+description: 'The question or instruction that you want the student to respond to. You may want to include some guidance on what they should write about.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

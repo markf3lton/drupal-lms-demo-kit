@@ -1,0 +1,27 @@
+uuid: 28ccca21-e7c7-412e-8e38-88972189ccbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.minimum_characters
+    - lms.lms_activity_type.ai_graded_answer
+_core:
+  default_config_hash: urssQErcMfOM5_P7FqZ6thbxDxpJipR71SaAQiUki9U
+id: lms_activity.ai_graded_answer.minimum_characters
+field_name: minimum_characters
+entity_type: lms_activity
+bundle: ai_graded_answer
+label: 'Minimum characters'
+description: 'The minimum number of characters required for the answer to be accepted. Use 0 for no minimum.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 50
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

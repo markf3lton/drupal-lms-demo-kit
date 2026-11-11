@@ -1,0 +1,10 @@
+uuid: 7d0265af-71dc-49a2-a1d3-9494d7414d34
+langcode: en
+status: true
+dependencies: {  }
+id: xapi_package
+name: 'xAPI package'
+description: 'Import an xAPI package'
+pluginId: xapi
+pluginConfiguration: {  }
+defaultMaxScore: 5

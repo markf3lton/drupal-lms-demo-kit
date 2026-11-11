@@ -1,0 +1,13 @@
+_core:
+  default_config_hash: IOh43-LvDIrDyV4n_VIJYaaI7U3n8kLp9EiL3Fv8eWo
+langcode: en
+default_mode: optional
+toggle_position: bottom-end
+start_screen_message: 'Open this activity in focus mode.'
+enabled_entity_types:
+  - group
+  - lms_lesson
+  - lms_activity
+keep_selectors: {  }
+fill_selectors:
+  - .h5p-content

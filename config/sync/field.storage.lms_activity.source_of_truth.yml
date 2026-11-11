@@ -1,0 +1,21 @@
+uuid: b7ca3461-b63a-45af-b43a-5491a3684947
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+    - text
+_core:
+  default_config_hash: cDetQoLs5oeEmK3zI8tbyJZmm0i9Ag6gCpHkYHhTE5Y
+id: lms_activity.source_of_truth
+field_name: source_of_truth
+entity_type: lms_activity
+type: text_long
+settings: {  }
+module: text
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

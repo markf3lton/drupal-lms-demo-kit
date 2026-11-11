@@ -1,0 +1,21 @@
+uuid: 503386b2-4725-4902-9aba-27073208d2d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+_core:
+  default_config_hash: _sFHpAK-53i66AQWDll44b8cu8ygRpNXb4Ip5GTzDh0
+id: lms_activity.evaluation_prompt
+field_name: evaluation_prompt
+entity_type: lms_activity
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: true
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

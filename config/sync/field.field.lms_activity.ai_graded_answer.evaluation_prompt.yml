@@ -1,0 +1,23 @@
+uuid: a1a061c4-f906-4029-adc1-2989a7ec5e9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.evaluation_prompt
+    - lms.lms_activity_type.ai_graded_answer
+_core:
+  default_config_hash: qOqpamvTjbGf0xepWI1Kxa0lRUjk6rqtb1wAssWSCqA
+id: lms_activity.ai_graded_answer.evaluation_prompt
+field_name: evaluation_prompt
+entity_type: lms_activity
+bundle: ai_graded_answer
+label: 'Evaluation prompt'
+description: "Instructions for the AI on how to evaluate the student's answer."
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Evaluate the current answer against the source of truth, provide feedback without citing any part of the source of truth.'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,11 @@
+uuid: b96b5054-90d6-40ae-97d2-e1dfed94ec8f
+langcode: en
+status: true
+dependencies: {  }
+id: ai_graded_answer
+name: 'AI-graded answer'
+description: ''
+pluginId: ai_answer
+pluginConfiguration:
+  provider_id: ollama_local
+defaultMaxScore: 5

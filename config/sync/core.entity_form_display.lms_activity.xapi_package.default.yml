@@ -1,0 +1,61 @@
+uuid: e307e921-9498-404e-bcce-9c0d2fa066da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.xapi_package.field_xapi_package
+    - lms.lms_activity_type.xapi_package
+  module:
+    - lms_xapi
+_core:
+  default_config_hash: P6adzE79xANjY3IN227Ngodoqba7cAPz607I3A6SZj0
+id: lms_activity.xapi_package.default
+targetEntityType: lms_activity
+bundle: xapi_package
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_xapi_package:
+    type: lms_xapi
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  focus_mode:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

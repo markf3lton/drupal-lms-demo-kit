@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8ba0ba28b6474495a797d1325a76bfda",
+    "content-hash": "0c396cae9f9038f8d799e0a71280c035",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2072,6 +2072,58 @@
             }
         },
         {
+            "name": "drupal/lms_focus_mode",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lms_focus_mode.git",
+                "reference": "81309abd18a7191b2f49df8e907b95c1c20439c5"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "drupal/group": "^3.2",
+                "drupal/lms": "^1.2.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1793784792",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "graber",
+                    "homepage": "https://www.drupal.org/user/1599440"
+                },
+                {
+                    "name": "mindewen",
+                    "homepage": "https://www.drupal.org/user/362627"
+                }
+            ],
+            "description": "Focus mode for Drupal LMS course activities",
+            "homepage": "https://www.drupal.org/project/lms_focus_mode",
+            "support": {
+                "source": "https://git.drupalcode.org/project/lms_focus_mode",
+                "issues": "https://www.drupal.org/project/issues/lms_focus_mode"
+            }
+        },
+        {
             "name": "drupal/lms_membership_request",
             "version": "1.1.0-beta4",
             "source": {
@@ -2122,17 +2174,17 @@
         },
         {
             "name": "drupal/lms_xapi",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/lms_xapi.git",
-                "reference": "1.0.0-beta1"
+                "reference": "1.0.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/lms_xapi-1.0.0-beta1.zip",
-                "reference": "1.0.0-beta1",
-                "shasum": "b82984421f4aa96ec73395030429bcf8c85005ce"
+                "url": "https://ftp.drupal.org/files/projects/lms_xapi-1.0.0-beta2.zip",
+                "reference": "1.0.0-beta2",
+                "shasum": "ee97180ebb8e25c5467939f5c166347ae17a1601"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -2144,8 +2196,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta1",
-                    "datestamp": "1781078378",
+                    "version": "1.0.0-beta2",
+                    "datestamp": "1794226060",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2171,7 +2223,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/lms_xapi",
                 "issues": "https://drupal.org/project/issues/lms_xapi"
-            }
+            },
+            "published-time": "2026-11-09T12:07:19+00:00"
         },
         {
             "name": "drupal/lms_yaml",
@@ -8629,8 +8682,9 @@
         "drupal/lms_ai": 10,
         "drupal/lms_certificate": 20,
         "drupal/lms_certificate_entity": 20,
+        "drupal/lms_focus_mode": 20,
         "drupal/lms_membership_request": 15,
-        "drupal/lms_xapi": 15,
+        "drupal/lms_xapi": 20,
         "drupal/lms_yaml": 10
     },
     "prefer-stable": true,

@@ -1,0 +1,32 @@
+uuid: 4f0fb76e-cbcc-4a72-bc4e-8c018db527b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.ai_graded_answer.evaluation_prompt
+    - field.field.lms_activity.ai_graded_answer.minimum_characters
+    - field.field.lms_activity.ai_graded_answer.question
+    - field.field.lms_activity.ai_graded_answer.source_of_truth
+    - lms.lms_activity_type.ai_graded_answer
+  module:
+    - text
+_core:
+  default_config_hash: MXzb5u3rCYdJ6s-hT2LPVWPUynz29I4vS-rnLxVKeLA
+id: lms_activity.ai_graded_answer.default
+targetEntityType: lms_activity
+bundle: ai_graded_answer
+mode: default
+content:
+  question:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  evaluation_prompt: true
+  minimum_characters: true
+  name: true
+  source_of_truth: true
+  uid: true

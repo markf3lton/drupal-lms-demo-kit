@@ -15,3 +15,6 @@
 /web/sites/*/files/
 /web/sites/*/private/
 /web/sites/simpletest/
+
+# Debug log written by lrs_xapi's endpoint; holds raw requests with cookies.
+/web/requests.txt

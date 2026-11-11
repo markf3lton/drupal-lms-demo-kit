@@ -1,0 +1,68 @@
+uuid: fddf97fb-9c89-4879-ba9d-b0b4aa84e63d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.ai_graded_answer.evaluation_prompt
+    - field.field.lms_activity.ai_graded_answer.minimum_characters
+    - field.field.lms_activity.ai_graded_answer.question
+    - field.field.lms_activity.ai_graded_answer.source_of_truth
+    - lms.lms_activity_type.ai_graded_answer
+  module:
+    - text
+_core:
+  default_config_hash: ADd_agViv4-L92WZsmd4byOMuzni3aU7K1F2LmjjNmA
+id: lms_activity.ai_graded_answer.default
+targetEntityType: lms_activity
+bundle: ai_graded_answer
+mode: default
+content:
+  evaluation_prompt:
+    type: string_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  minimum_characters:
+    type: number
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  question:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 4
+      placeholder: ''
+    third_party_settings: {  }
+  source_of_truth:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 6
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 26
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,24 @@
+uuid: cf20c69d-85a3-4306-aefd-e918bfedc557
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.source_of_truth
+    - lms.lms_activity_type.ai_graded_answer
+  module:
+    - text
+_core:
+  default_config_hash: s9uvBytm57RONnJCqhVZKzumGaIzxbWVU5wyJweGcns
+id: lms_activity.ai_graded_answer.source_of_truth
+field_name: source_of_truth
+entity_type: lms_activity
+bundle: ai_graded_answer
+label: 'Source of truth'
+description: "The authoritative content the AI uses to evaluate the student's answer."
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

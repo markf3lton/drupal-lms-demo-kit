@@ -32,8 +32,9 @@
         "drupal/lms_ai": "^1.0@beta",
         "drupal/lms_certificate": "@dev",
         "drupal/lms_certificate_entity": "@dev",
+        "drupal/lms_focus_mode": "^1.0@dev",
         "drupal/lms_membership_request": "*@alpha",
-        "drupal/lms_xapi": "@alpha",
+        "drupal/lms_xapi": "^1.0@dev",
         "drupal/lms_yaml": "@beta",
         "drupal/views_bulk_operations": "^4.4"
     },

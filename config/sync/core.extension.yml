@@ -26,6 +26,7 @@ module:
   field: 0
   field_ui: 0
   file: 0
+  fillpdf: 0
   filter: 0
   flexible_permissions: 0
   grequest: 0
@@ -41,7 +42,7 @@ module:
   lms_answer_comments: 0
   lms_answer_plugins: 0
   lms_certificate: 0
-  lms_certificate_entity: 0
+  lms_certificate_fillpdf: 0
   lms_classes: 0
   lms_focus_mode: 0
   lms_membership_request: 0
@@ -58,10 +59,12 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  serialization: 0
   state_machine: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   twig_tweak: 0
   update: 0

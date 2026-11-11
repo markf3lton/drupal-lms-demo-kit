@@ -14,6 +14,7 @@
 # User-generated content and test sites.
 /web/sites/*/files/
 /web/sites/*/private/
+/private/
 /web/sites/simpletest/
 
 # Debug log written by lrs_xapi's endpoint; holds raw requests with cookies.

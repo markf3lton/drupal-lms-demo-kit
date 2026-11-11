@@ -48,6 +48,8 @@ services:
       build:
         # PHP zip extension for lms_yaml course imports (ZipArchive). In build, not init, so previews cloned from an older base preview get it too.
         - php -m | grep -qx zip || (apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip)
+        # pdftk fills the certificate PDF templates for FillPDF.
+        - command -v pdftk || (apt-get update && apt-get install -y pdftk-java)
         - composer install --optimize-autoloader
         - |
           if vendor/bin/drush status --field=bootstrap 2>/dev/null | grep -q Successful; then
@@ -62,3 +64,6 @@ services:
         # Apache runs as www-data and must be able to write public files.
         - mkdir -p "${TUGBOAT_ROOT}/web/sites/default/files"
         - chown -R www-data:www-data "${TUGBOAT_ROOT}/web/sites/default/files"
+        # Private files (FillPDF templates) live outside the web root.
+        - mkdir -p "${TUGBOAT_ROOT}/private"
+        - chown -R www-data:www-data "${TUGBOAT_ROOT}/private"

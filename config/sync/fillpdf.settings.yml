@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: L7V6wJjsvFNqjJIDquHAS4nVxatziYJ8aWrli0zhDqo
+backend: pdftk
+remote_protocol: https
+allowed_schemes:
+  - private
+template_scheme: public
+pdftk_path: pdftk
+shell_locale: en_US.utf8

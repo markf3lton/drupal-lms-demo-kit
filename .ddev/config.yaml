@@ -12,6 +12,8 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
+# pdftk fills the certificate PDF templates for FillPDF.
+webimage_extra_packages: [pdftk-java]
 corepack_enable: true
 
 # Key features of DDEV's config.yaml:

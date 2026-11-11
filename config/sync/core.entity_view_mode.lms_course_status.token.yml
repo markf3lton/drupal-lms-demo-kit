@@ -1,0 +1,11 @@
+uuid: f48ff38e-cd8b-4a5e-b130-3016f453a0ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+id: lms_course_status.token
+label: Token
+description: null
+targetEntityType: lms_course_status
+cache: true

@@ -1,6 +1,8 @@
 # Build This Kit
 
-The best way to learn is by doing. This quick start repo helps me demo the features of LMS, and  take it in new directions, but you can build this kit yourself by following the steps below, in order.
+The [Quick Start](https://github.com/markf3lton/drupal-lms-demo-kit#quick-start) is recommended for most.
+
+For transparency, I'm listing all the commands I used to build this kit below.
 
 ## Set up Drupal
 
@@ -170,9 +172,9 @@ ddev drush recipe /var/www/html/recipes/lms_demo_kit
 
 ## Tugboat preview
 
-An essential part of this demo kit is sharing Drupal LMS with evaluators via preview links. A Tugboat config is provided — see [tugboat.md](tugboat.md). Note that Tugboat imports the latest `.tugboat/database.sql.gz` when it builds the preview.
+A Tugboat config is provided so that you can demo Drupal LMS, see [tugboat.md](tugboat.md). Note that Tugboat imports the latest `.tugboat/database.sql.gz` when it builds the preview.
 
 
 ## Changelog
 
-See [here](changelog.md)
+See [changelog.md](changelog.md)

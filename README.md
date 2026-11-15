@@ -2,12 +2,13 @@
 
 Try out [Drupal LMS](https://www.drupal.org/project/lms) in a live [demo environment](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/).
 
-Or follow the [Quick Start](https://github.com/markf3lton/drupal-lms-demo-kit#quick-start) instructions to install it locally.
+The [main](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/) branch aligns with the Drupal recipe. The [lms](https://lms-oid7hrdhuogclkekr94bmbr12kqz3rvi.tugboatqa.com/) branch is a work-in-progress demo created for New England Drupal Camp that demonstrates certificates (using FillPDF), xAPI import, and AI-graded answers (DDEV only, uses Ollama). See the [demo sequence](docs/demo-sequence.md) for a walkthrough.
 
+Use DDEV and the [Quick Start](https://github.com/markf3lton/drupal-lms-demo-kit#quick-start) instructions to set up the demo locally.
 
 ## Demo Accounts
 
-The demo is a public sandbox: don't enter anything realm and expect it to be reset from time to time.
+The demo is a public sandbox: don't enter anything real, and expect it to be reset from time to time.
 
 Demo user accounts below (they all use `123456`):
 
@@ -32,7 +33,7 @@ The LMS Admin and LMS Teacher roles can manage courses.
 
 ## Reset
 
-To reset a studen'ts progress (local environment):
+To reset a student's progress (local environment):
 
 ```shell
 ddev drush lms:reset-course <course_id> <user_id>
@@ -40,7 +41,7 @@ ddev drush lms:reset-course <course_id> <user_id>
 
 ## About this kit
 
-My setup follows the installation guide at (https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms).
+My setup follows the [installation guide](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms).
 
 See [Tugboat notes](docs/tugboat.md) and other resources in the project [docs](https://github.com/markf3lton/drupal-lms-demo-kit/tree/main/docs).
 
@@ -96,9 +97,9 @@ To import the demo course:
 ddev drush uli --name="LMS Admin" /admin/lms
 ```
 
-Alternatively, import a seeded database from `.tugboat/database.sql.gz` 
+Alternatively, import a seeded database from `.tugboat/database.sql.gz`.
 
-Once you're up an running, snapshot the baseline with DDEV:
+Once you're up and running, snapshot the baseline with DDEV:
 
 ```shell
 ddev snapshot --name=lms-baseline
@@ -117,7 +118,7 @@ See the recipe [README](https://git.drupalcode.org/project/lms_demo_kit/-/blob/1
 
 This kit assumes the **Claro** admin theme is enabled. The admin toolbar from Claro is familiar to Drupal site builders; I plan to transition this to use Gin.
 
-If you applied the [Recipe](#recipe) to a Drupal CMS site (which uses Gin), these commands should switch you back back to Claro:
+If you applied the [Recipe](#recipe) to a Drupal CMS site (which uses Gin), these commands should switch you back to Claro:
 
 ```shell
 ddev composer require drupal/admin_toolbar

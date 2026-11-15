@@ -6,4 +6,4 @@ allowed_schemes:
   - private
 template_scheme: public
 pdftk_path: pdftk
-shell_locale: C
+shell_locale: en_US.utf8

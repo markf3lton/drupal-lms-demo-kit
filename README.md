@@ -2,7 +2,7 @@
 
 Try out [Drupal LMS](https://www.drupal.org/project/lms) in a live [demo environment](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/).
 
-The [main](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/) branch aligns with the Drupal recipe. The [lms](https://lms-oid7hrdhuogclkekr94bmbr12kqz3rvi.tugboatqa.com/) branch is a work-in-progress demo created for New England Drupal Camp that demonstrates certificates (using FillPDF), xAPI import, and AI-graded answers (DDEV only, uses Ollama). See the [demo sequence](docs/demo-sequence.md) for a walkthrough.
+Note: The [main](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/) branch aligns with the [Drupal.org recipe](https://www.drupal.org/project/lms_demo_kit). The [lms](https://lms-oid7hrdhuogclkekr94bmbr12kqz3rvi.tugboatqa.com/) branch is a work-in-progress demo created for New England Drupal Camp that demonstrates certificates (using FillPDF), xAPI import, and AI-graded answers (DDEV only, uses Ollama). See the [demo sequence](docs/demo-sequence.md) for a walkthrough.
 
 Use DDEV and the [Quick Start](https://github.com/markf3lton/drupal-lms-demo-kit#quick-start) instructions to set up the demo locally.
 

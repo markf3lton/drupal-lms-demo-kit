@@ -33,7 +33,7 @@ Log in via `tugboat shell 6af702207a342e6778bcd20d`, then `vendor/bin/drush uli`
 
 Create the certificate at `/admin/structure/fillpdf`:
 
-1. Upload [`certificate-of-completion_fill_form_fields.pdf`](https://github.com/markf3lton/drupal-lms-demo-kit/blob/lms/assets/certificate-of-completion_fill_form_fields.pdf) (from the lms branch's `assets/`).
+1. Upload [`assets/certificates/certificate-of-completion_fill_form_fields.pdf`](../assets/certificates/certificate-of-completion_fill_form_fields.pdf) from this repo.
 2. Title it "Certificate of completion demo".
 3. Map the fields:
    - `recipient_name` → `[user:display-name]`

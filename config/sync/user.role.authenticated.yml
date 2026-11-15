@@ -6,7 +6,6 @@ dependencies:
     - filter.format.basic_html
   module:
     - file
-    - fillpdf
     - filter
     - system
 _core:
@@ -18,5 +17,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'delete own files'
-  - 'publish all pdfs'
   - 'use text format basic_html'

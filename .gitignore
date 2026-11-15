@@ -19,3 +19,6 @@
 
 # Debug log written by lrs_xapi's endpoint; holds raw requests with cookies.
 /web/requests.txt
+
+# Nuisance files
+.DS_Store

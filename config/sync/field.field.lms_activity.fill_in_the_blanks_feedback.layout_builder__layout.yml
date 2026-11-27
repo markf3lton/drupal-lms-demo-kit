@@ -1,0 +1,21 @@
+uuid: 44ecef55-9f68-4a36-a5e7-7a4961113105
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.layout_builder__layout
+    - lms.lms_activity_type.fill_in_the_blanks_feedback
+  module:
+    - layout_builder
+id: lms_activity.fill_in_the_blanks_feedback.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: lms_activity
+bundle: fill_in_the_blanks_feedback
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

@@ -1,0 +1,21 @@
+uuid: 26002542-e1fa-43f2-a822-b37c8db799f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.layout_builder__layout
+    - lms.lms_activity_type.free_text_feedback
+  module:
+    - layout_builder
+id: lms_activity.free_text_feedback.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: lms_activity
+bundle: free_text_feedback
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

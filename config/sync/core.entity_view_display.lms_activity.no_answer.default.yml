@@ -9,30 +9,61 @@ dependencies:
     - lms.lms_activity_type.no_answer
   module:
     - image
+    - layout_builder
     - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          fc0c53bc-f273-40f7-a22e-56ba36650ac7:
+            uuid: fc0c53bc-f273-40f7-a22e-56ba36650ac7
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:no_answer:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: wide
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          aa0290d9-b544-494a-bdb3-deda3ec83494:
+            uuid: aa0290d9-b544-494a-bdb3-deda3ec83494
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:no_answer:field_information'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 id: lms_activity.no_answer.default
 targetEntityType: lms_activity
 bundle: no_answer
 mode: default
-content:
-  field_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: wide
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_information:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
+content: {  }
 hidden:
+  answer_form: true
   name: true
   uid: true
+  field_image: true
+  field_information: true

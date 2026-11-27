@@ -2,8 +2,8 @@
 # https://docs.tugboatqa.com/starter-configs/tutorials/drupal-10/
 #
 # Previews import the baseline demo database from .tugboat/database.sql.gz
-# on every full rebuild (init), then bring code/config up to date on every
-# build. To refresh the baseline: ddev export-db --file=.tugboat/database.sql.gz
+# on every Rebuild and Refresh (update), then bring code/config up to date on
+# every build. To refresh the baseline, follow the refresh ritual in docs/maintainers-workflow.md.
 services:
   database:
     image: tugboatqa/mariadb:11.8
@@ -28,16 +28,20 @@ services:
         # Make Drupal read the Tugboat database settings:
         - ln -snf "${TUGBOAT_ROOT}/.tugboat/settings.tugboat.php" "${TUGBOAT_ROOT}/web/sites/default/settings.local.php"
 
-        # Wait for the database container before importing.
+      # Runs on Rebuild and on every Refresh (including the nightly base preview refresh), so demo activity is reset.
+      update:
         - |
           echo "Waiting for database..."
           until mysql -h database -u tugboat -ptugboat -e "SELECT 1;" &>/dev/null; do
             sleep 2
           done
           echo "Database is ready!"
-        # Only runs on a full rebuild (init), not on every routine build/update.
+        # Drop existing tables first; a Refresh imports into a database that already has them.
         - |
           if [ -f "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" ]; then
+            echo "Dropping existing tables..."
+            mysql -h database -u tugboat -ptugboat -N -e "SELECT CONCAT('DROP TABLE IF EXISTS \`', table_name, '\`;') FROM information_schema.tables WHERE table_schema = 'tugboat'" \
+              | mysql -h database -u tugboat -ptugboat tugboat
             echo "Importing seeded demo database..."
             zcat "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" | mysql -h database -u tugboat -ptugboat --ssl=false tugboat
             echo "Seeded demo database imported."

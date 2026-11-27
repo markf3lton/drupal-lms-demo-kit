@@ -17,10 +17,10 @@ This page covers only what's specific to this kit. For everything else refer to 
 
 ## How this config works
 
-`.tugboat/config.yml` provisions previews in two phases: **`init`** runs once when a preview's containers are first created, while **`build`** runs on every build or refresh and brings code and config up to date. PR previews build on every push; branch previews (built from the **Branches** tab) only update when you refresh them.
+`.tugboat/config.yml` provisions previews in two phases: **`init`** runs once when a preview's containers are first created, **`update`** runs on every Rebuild and Refresh and resets the database from the seed, and **`build`** runs on every build or refresh and brings code and config up to date. PR previews build on every push; branch previews (built from the **Branches** tab) only update when you refresh them.
 
 - **Database settings via symlink.** Drupal needs Tugboat's database credentials. `init` symlinks `.tugboat/settings.tugboat.php` to `web/sites/default/settings.local.php`, which the stock `settings.php` includes if present. Hosting concerns stay in the hosting config.
-- **Seeded database when available.** `init` imports `.tugboat/database.sql.gz` if it exists, so previews boot with demo users, courses, and rosters in place. For simplicity.
+- **Seeded database when available.** `update` drops any existing tables and imports `.tugboat/database.sql.gz` if it exists, so previews boot with demo users, courses, and rosters in place, and a Refresh (including the nightly base preview refresh) resets any demo activity.
 - **From-config fallback.** On branches without a database dump, `build` detects the missing install and runs `site:install --existing-config` instead.
 - **No usable user 1 password.** `build` gives user 1 a new random password that nobody knows. The demo accounts in the README are for visitors; the maintainer gets in with `drush uli` via `tugboat shell` (see below).
 
@@ -31,8 +31,8 @@ The two files in full — `.tugboat/config.yml`:
 # https://docs.tugboatqa.com/starter-configs/tutorials/drupal-10/
 #
 # Previews import the baseline demo database from .tugboat/database.sql.gz
-# on every full rebuild (init), then bring code/config up to date on every
-# build. To refresh the baseline: ddev export-db --file=.tugboat/database.sql.gz
+# on every Rebuild and Refresh (update), then bring code/config up to date on
+# every build. To refresh the baseline, follow the refresh ritual in docs/maintainers-workflow.md.
 services:
   database:
     image: tugboatqa/mariadb:11.8
@@ -54,16 +54,20 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
         # Make Drupal read the Tugboat database settings:
         - ln -snf "${TUGBOAT_ROOT}/.tugboat/settings.tugboat.php" "${TUGBOAT_ROOT}/web/sites/default/settings.local.php"
-        # Wait for the database container before importing.
+      # Runs on Rebuild and on every Refresh (including the nightly base preview refresh), so demo activity is reset.
+      update:
         - |
           echo "Waiting for database..."
           until mysql -h database -u tugboat -ptugboat -e "SELECT 1;" &>/dev/null; do
             sleep 2
           done
           echo "Database is ready!"
-        # Only runs on a full rebuild (init), not on every routine build/update.
+        # Drop existing tables first; a Refresh imports into a database that already has them.
         - |
           if [ -f "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" ]; then
+            echo "Dropping existing tables..."
+            mysql -h database -u tugboat -ptugboat -N -e "SELECT CONCAT('DROP TABLE IF EXISTS \`', table_name, '\`;') FROM information_schema.tables WHERE table_schema = 'tugboat'" \
+              | mysql -h database -u tugboat -ptugboat tugboat
             echo "Importing seeded demo database..."
             zcat "${TUGBOAT_ROOT}/.tugboat/database.sql.gz" | mysql -h database -u tugboat -ptugboat --ssl=false tugboat
             echo "Seeded demo database imported."

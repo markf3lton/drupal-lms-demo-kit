@@ -148,10 +148,10 @@ Recipe work happens in `recipes/lms_demo_kit/` on any branch. Once it reaches `m
 
 ### Tugboat
 
-Previews import `.tugboat/database.sql.gz` during `init` — see [tugboat.md](tugboat.md), including the Gotchas on stale previews.
+Previews import `.tugboat/database.sql.gz` during `update` — see [tugboat.md](tugboat.md), including the Gotchas on stale previews.
 
 - Every build runs `composer install`, `updb`, and `config:import`, so code and config changes reach a preview with a plain **refresh**. Only demo-content changes need a new dump.
-- **Refresh** (routine): keeps the preview's database and runs the build. **Rebuild** (rare): re-runs `init` and re-imports the dump. Rebuild only when the dump changed.
+- **Refresh** and **Rebuild** both re-import the dump (`update`) and then run the build, so any demo activity is reset. Refresh restores the last build snapshot first; Rebuild re-runs `init` too.
 - Base Previews clone from `main`'s preview; `main` must stay demo-ready. Tugboat won't rebuild `main` while other previews depend on it — delete those first, then recreate them.
 
 ### Testing a fresh clone alongside your working copy

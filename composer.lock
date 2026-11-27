@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e0d5263df146c59112dcf9de236f0cb",
+    "content-hash": "1550c416a4ceb57dacbe875a7b764963",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1358,7 +1358,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/entity",
                 "issues": "https://www.drupal.org/project/issues/entity"
-            }
+            },
+            "published-time": "2026-08-26T14:49:46+00:00"
         },
         {
             "name": "drupal/fillpdf",
@@ -1463,10 +1464,15 @@
             ],
             "description": "This module allows you to gather, calculate and cache permissions from a myriad of sources",
             "homepage": "http://drupal.org/project/flexible_permissions",
+            "keywords": [
+                "Access control",
+                "Minimally maintained"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/flexible_permissions",
                 "issues": "https://drupal.org/project/issues/flexible_permissions"
-            }
+            },
+            "published-time": "2024-09-20T12:29:49+00:00"
         },
         {
             "name": "drupal/grequest",
@@ -1567,10 +1573,15 @@
             ],
             "description": "This module allows you to group users, content and other entities",
             "homepage": "http://drupal.org/project/group",
+            "keywords": [
+                "Access control",
+                "Actively maintained"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/group",
                 "issues": "https://drupal.org/project/issues/group"
-            }
+            },
+            "published-time": "2025-05-06T08:18:55+00:00"
         },
         {
             "name": "drupal/js_cookie",
@@ -1630,17 +1641,17 @@
         },
         {
             "name": "drupal/lms",
-            "version": "1.2.5",
+            "version": "1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/lms.git",
-                "reference": "1.2.5"
+                "reference": "1.2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/lms-1.2.5.zip",
-                "reference": "1.2.5",
-                "shasum": "802b0bd79fd3f5fe06fe1f662fa8eec10486ef46"
+                "url": "https://ftp.drupal.org/files/projects/lms-1.2.8.zip",
+                "reference": "1.2.8",
+                "shasum": "2d1eac646dd14a0cf6e7a09e3a1b53e775bf3c33"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -1655,8 +1666,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.2.5",
-                    "datestamp": "1793634941",
+                    "version": "1.2.8",
+                    "datestamp": "1795452619",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -1680,10 +1691,15 @@
             ],
             "description": "Learning Management System for Drupal.",
             "homepage": "https://www.drupal.org/project/lms",
+            "keywords": [
+                "Actively maintained",
+                "Content display"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/lms",
                 "issues": "https://www.drupal.org/project/issues/lms"
-            }
+            },
+            "published-time": "2026-11-23T16:49:58+00:00"
         },
         {
             "name": "drupal/lms_certificate",
@@ -1825,6 +1841,62 @@
             }
         },
         {
+            "name": "drupal/lms_focus_mode",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/lms_focus_mode.git",
+                "reference": "b3097c03c15edf67f57f40c23adfbac680e26354"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11 || ^12",
+                "drupal/group": "^3.2",
+                "drupal/lms": "^1.2.4"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1794591236",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "catch",
+                    "homepage": "https://www.drupal.org/user/35733"
+                },
+                {
+                    "name": "graber",
+                    "homepage": "https://www.drupal.org/user/1599440"
+                },
+                {
+                    "name": "mindewen",
+                    "homepage": "https://www.drupal.org/user/362627"
+                }
+            ],
+            "description": "Focus mode for Drupal LMS course activities",
+            "homepage": "https://www.drupal.org/project/lms_focus_mode",
+            "keywords": [
+                "Actively maintained",
+                "Content display"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/lms_focus_mode",
+                "issues": "https://www.drupal.org/project/issues/lms_focus_mode"
+            }
+        },
+        {
             "name": "drupal/lms_membership_request",
             "version": "1.1.0-beta4",
             "source": {
@@ -1875,17 +1947,17 @@
         },
         {
             "name": "drupal/lms_xapi",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/lms_xapi.git",
-                "reference": "1.0.0-beta1"
+                "reference": "1.0.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/lms_xapi-1.0.0-beta1.zip",
-                "reference": "1.0.0-beta1",
-                "shasum": "b82984421f4aa96ec73395030429bcf8c85005ce"
+                "url": "https://ftp.drupal.org/files/projects/lms_xapi-1.0.0-beta2.zip",
+                "reference": "1.0.0-beta2",
+                "shasum": "ee97180ebb8e25c5467939f5c166347ae17a1601"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -1897,8 +1969,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-beta1",
-                    "datestamp": "1781078378",
+                    "version": "1.0.0-beta2",
+                    "datestamp": "1794226060",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -1924,7 +1996,8 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/lms_xapi",
                 "issues": "https://drupal.org/project/issues/lms_xapi"
-            }
+            },
+            "published-time": "2026-11-09T12:07:19+00:00"
         },
         {
             "name": "drupal/lms_yaml",
@@ -3683,7 +3756,8 @@
                 "issues": "https://github.com/RusticiSoftware/TinCanPHP/issues",
                 "source": "https://github.com/RusticiSoftware/TinCanPHP/tree/0.11.4"
             },
-            "time": "2014-12-16T15:35:23+00:00"
+            "time": "2014-12-16T15:35:23+00:00",
+            "published-time": "2014-12-18T14:11:50+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -8284,8 +8358,9 @@
         "drupal/grequest": 5,
         "drupal/lms_certificate": 20,
         "drupal/lms_certificate_entity": 20,
+        "drupal/lms_focus_mode": 20,
         "drupal/lms_membership_request": 15,
-        "drupal/lms_xapi": 15,
+        "drupal/lms_xapi": 20,
         "drupal/lms_yaml": 10
     },
     "prefer-stable": true,

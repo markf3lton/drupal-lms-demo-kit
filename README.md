@@ -1,80 +1,16 @@
 # Drupal LMS Demo Kit
 
-You can try out [Drupal LMS](https://www.drupal.org/project/lms) in my [live preview](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/).
+Try out [Drupal LMS](https://www.drupal.org/project/lms) in a live [demo environment](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/).
 
-## Demo Accounts
-
-The preview site is a public sandbox, so don't enter anything real, and expect it to be reset from time to time.
-
-Demo user accounts are provided (all use `123456`):
-
-| Account | Role |
-| :--- | :--- |
-| LMS Admin | LMS Admin |
-| LMS Teacher | LMS Teacher |
-| Molly Larkins | Student (designated demo student) |
-| Jan Kowalski, Diego Ramos | Students, Section A |
-| Emma Chen, Nina Patel, Sam Carter | Students, Section B |
-
-Access to LMS courses is managed by the [Group](https://www.drupal.org/project/group) module.
-
-When teachers are added to existing courses by an LMS Admin, they can manage them and make changes.
-
-## Basic verifications
-
-- Anonymous users should see a course on the front page
-- Molly (a demo student) can enroll and take the course
-- `/admin/lms/activity_type` lists 12 activity types
-- A Teacher can view Molly's progress in a course
-
-## Reset
-
-To reset a student's progress in a course (local install):
-
-```shell
-ddev drush lms:reset-course <course_id> <user_id>
-```
-
-## About this kit
-
-To make this kit, I simply followed the installation guide in [the project's documentation](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms).
-
-This GitHub repo saves me a lot of time: there's a [Quick Start](#quick-start), step-by-step instructions for local development, [Tugboat preview docs](docs/tugboat.md), etc.
-
-More docs:
-
-- [How this kit was built](docs/build-this-kit.md), step by step
-- [Maintainer's workflow](docs/maintainers-workflow.md), for forking or maintaining the kit
-- [Tugboat previews](docs/tugboat.md)
-- [Changelog](docs/changelog.md)
+The [main](https://main-tygknmd1g7emlvtb1h4mkfu5nt8ii5hl.tugboatqa.com/) branch of this repo aligns with the [LMS Demo Kit recipe](https://www.drupal.org/project/lms_demo_kit) on Drupal.org. The [lms](https://lms-oid7hrdhuogclkekr94bmbr12kqz3rvi.tugboatqa.com/) branch is a demo (created for New England Drupal Camp 2026) demonstrating activity types, certificates, xAPI import, and AI-graded answers (see [demo sequence](docs/demo-sequence.md)).
 
 ## Prerequisites
 
-- A Docker provider (OrbStack, Docker Desktop, Colima)
+- Docker provider (OrbStack, Docker Desktop, Colima)
 - [DDEV](https://ddev.readthedocs.io/) v1.24+
 - git
 
-## Repo layout
-
-```
-.
-├── .ddev/                      # DDEV settings
-├── .tugboat/                   # Tugboat preview setup
-│   └── database.sql.gz         # Seeded demo database
-├── assets/
-│   └── courses/                # LMS course packages (YAML zip)
-├── config/
-│   └── sync/                   # Exported site config (source of truth)
-├── docs/                       # Build, Tugboat, and maintainer guides
-├── recipes/
-│   └── lms_demo_kit/           # LMS layer as a Drupal recipe
-│       ├── recipe.yml
-│       ├── config/             # LMS config, portable (no UUIDs)
-│       └── content/            # Starter course, class, lessons, activities
-├── scripts/
-│   └── create-demo-users.sh    # Demo user creation
-└── web/                        # Drupal docroot (core/contrib gitignored)
-```
+PHP, Composer and Drush run inside DDEV, so you don't need them installed locally.
 
 ## Quick Start
 
@@ -84,48 +20,115 @@ cd drupal-lms-demo-kit
 ddev start
 ddev composer install
 
-# Install from config and create the demo users
+# Install from config
 ddev drush site:install --existing-config -y
+
+# Add the demo users
 ./scripts/create-demo-users.sh
-
-# Import the demo course (assets/courses) at LMS > Import courses:
-ddev drush uli --name="LMS Admin" /admin/lms
-
-# Or, skip all of the above and import the seeded demo database
-gunzip -c .tugboat/database.sql.gz | ddev import-db
-ddev drush updb -y
-ddev drush cim -y
-ddev drush cr
-ddev drush uli
-ddev launch
 ```
 
-Do yourself a favor and snapshot the baseline database:
+To import the demo course, log in (as an "LMS Admin") and navigate to LMS > Import courses.
 
 ```shell
-ddev snapshot --name=my-baseline
-ddev snapshot restore my-baseline
+# Log in
+ddev drush uli --name="LMS Admin" /admin/lms
+
+# Manually upload the file at assets/courses/course_creators_guide_en_v1.zip
 ```
+
+### LMS admin steps
+
+A course imported from an archive has no class; therefore students will see "No open classes" instead of "Enroll." Drupal LMS builds courses and classes on the [Group](https://www.drupal.org/project/group) module.
+
+To set up the class, perform the following steps as an LMS Admin:
+
+1. From the **Groups** menu, choose **Add group**, then **Class**. Give it a title and choose **Create Class and become a member**.
+2. From the **LMS** menu, edit the course and select the **All entities** tab. Choose **Add existing entity**, then **LMS Class**, select your class, and save.
+
+Students now see **Enroll** on the course.
+
+### DDEV snapshots
+
+Take snapshots of your demo environment to make it easy to replay your demo sequences:
+
+```shell
+ddev snapshot --name=demo-ready
+```
+
+To return to that snapshot later:
+
+```shell
+ddev snapshot restore demo-ready
+```
+
+## Demo Accounts
+
+The live demo is a public sandbox: don't enter anything real, and expect it to be reset.
+
+Demo user accounts below (they all use `123456`):
+
+| Account | Role |
+| :--- | :--- |
+| LMS Admin | LMS Admin |
+| LMS Teacher | LMS Teacher |
+| Molly Larkins | Student (designated demo student) |
+| Jan Kowalski, Diego Ramos, Emma Chen, Nina Patel, Sam Carter | Students |
+
+Drupal LMS course access is managed by the [Group](https://www.drupal.org/project/group) module.
+
+The LMS Admin and LMS Teacher roles can manage courses.
+
+## What you should see
+
+After the LMS admin steps:
+
+- Anonymous users see a course on the front page
+- Molly (demo student) can enroll and take the course
+- `/admin/lms/activity_type` lists 12 activity types
+
+## Reset
+
+To reset a student's progress (DDEV):
+
+```shell
+ddev drush lms:reset-course <course_id> <user_id>
+```
+
+## Repo layout
+
+```
+.
+├── .ddev/                      # DDEV settings
+├── .tugboat/                   # Tugboat preview setup
+│   └── database.sql.gz         # Seeded demo database
+├── assets/
+│   ├── certificates/           # Fillable certificate PDF
+│   └── courses/                # Course packages for LMS > Import courses
+├── config/
+│   └── sync/                   # Exported site config
+├── docs/                       # Guides, demo sequence, changelog
+├── recipes/
+│   └── lms_demo_kit/           # LMS layer as a Drupal recipe
+│       ├── recipe.yml
+│       ├── config/             # LMS config, portable (no UUIDs)
+│       ├── content/            # Starter course, class, lessons, activities
+│       └── scripts/            # Copy of create-demo-users.sh
+├── scripts/
+│   └── create-demo-users.sh    # Demo user creation (plus maintenance scripts)
+└── web/                        # Drupal docroot (core/contrib gitignored)
+```
+
+## Changelog
+
+- [Changelog](docs/changelog.md)
 
 ## Recipe
 
 This kit includes a Drupal recipe: https://www.drupal.org/project/lms_demo_kit
 
-You should be able to apply it to any Drupal 11 site, but it's not been widely tested.
+### A note about Drupal CMS
 
-```shell
-ddev drush recipe /var/www/html/recipes/lms_demo_kit
-```
-
-See the recipe's [README](https://git.drupalcode.org/project/lms_demo_kit/-/blob/1.0.x/README.md).
-
-Note: Starting with Drupal LMS 1.2.x, the recipe needs the patch from [#3626214](https://www.drupal.org/i/3626214). This kit already applies it (see `patches/`).
-
-## A note about the admin theme
-
-For now, this kit assumes the **Claro** admin theme is enabled. Its admin toolbar is familiar to long-time Drupal site builders; however, I will transition this to use Gin, see [#3611274](https://www.drupal.org/project/lms_demo_kit/issues/3611274).
-
-If you apply the [Recipe](#recipe) to a Drupal CMS site (which uses Gin), these commands switch it back to Claro:
+This kit has not been tested extensively with Drupal CMS yet, and it uses the Claro admin theme by default (not Gin). To switch from Gin to Claro:
 
 ```shell
 ddev composer require drupal/admin_toolbar
@@ -137,6 +140,6 @@ ddev drush cr
 
 ## Credits
 
-- [drupal_lms_ddev](https://github.com/graber-1/drupal_lms_ddev) — The ancestor of this kit's approach
+- [drupal_lms_ddev](https://github.com/graber-1/drupal_lms_ddev) — The inspiration for this kit's approach
 - [Drupal LMS documentation](https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/drupal-lms)
 - "A Quick Guide to the American Federation of Teachers" (`assets/courses/a-quick-guide-to-the-american-federation-of-teachers-xapi-UVaMDSg3.zip`) is adapted from the Wikipedia article [American Federation of Teachers](https://en.wikipedia.org/wiki/American_Federation_of_Teachers) by Wikipedia contributors, licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The course is shared under the same license.

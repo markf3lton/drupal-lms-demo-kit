@@ -1,0 +1,15 @@
+uuid: e81076f3-8405-409e-8117-2af5e7de5a5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms_focus_mode
+third_party_settings:
+  lms_focus_mode:
+    default_mode: optional
+id: xapi_package
+name: 'xAPI package'
+description: 'Import an xAPI package'
+pluginId: xapi
+pluginConfiguration: {  }
+defaultMaxScore: 5

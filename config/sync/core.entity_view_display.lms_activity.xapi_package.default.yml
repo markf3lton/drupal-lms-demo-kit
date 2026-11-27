@@ -1,0 +1,41 @@
+uuid: a4bfdd20-96d3-4842-9578-97cc60948b5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.lms_activity.xapi_package.field_xapi_package
+    - lms.lms_activity_type.xapi_package
+  module:
+    - lms_xapi
+    - user
+_core:
+  default_config_hash: evKOah9MdfAPRk7Z8NEq8V_YfXoC4_0Hrpq-u4vEEHU
+id: lms_activity.xapi_package.default
+targetEntityType: lms_activity
+bundle: xapi_package
+mode: default
+content:
+  field_xapi_package:
+    type: lms_xapi
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  uid:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  answer_form: true

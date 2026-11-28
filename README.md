@@ -34,6 +34,7 @@ To import the demo course, log in (as an "LMS Admin") and navigate to LMS > Impo
 ddev drush uli --name="LMS Admin" /admin/lms
 
 # Manually upload the file at assets/courses/course_creators_guide_en_v1.zip
+# or the Phishing demo course at assets/courses/demo_phishing.zip
 ```
 
 ### LMS admin steps
@@ -84,7 +85,7 @@ After the LMS admin steps:
 
 - Anonymous users see a course on the front page
 - Molly (demo student) can enroll and take the course
-- `/admin/lms/activity_type` lists 12 activity types
+- `/admin/lms/activity_type` lists 13 activity types
 
 ## Reset
 
@@ -92,6 +93,12 @@ To reset a student's progress (DDEV):
 
 ```shell
 ddev drush lms:reset-course <course_id> <user_id>
+```
+
+To reset every student on a course, leave out the user:
+
+```shell
+ddev drush lms:reset-course <course_id>
 ```
 
 ## Repo layout

@@ -3,11 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.lms_activity.free_text_feedback.field_image
+    - field.field.lms_activity.free_text_feedback.layout_builder__layout
     - field.field.lms_activity.free_text_feedback.minimum_characters
     - field.field.lms_activity.free_text_feedback.phrase_feedback
     - field.field.lms_activity.free_text_feedback.question
+    - image.style.thumbnail
     - lms.lms_activity_type.free_text_feedback
   module:
+    - image
     - lms_answer_plugins
     - text
 _core:
@@ -17,6 +21,20 @@ targetEntityType: lms_activity
 bundle: free_text_feedback
 mode: default
 content:
+  field_image:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  focus_mode:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   minimum_characters:
     type: number
     weight: 2
@@ -55,4 +73,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  layout_builder__layout: true
   uid: true

@@ -6,9 +6,13 @@ dependencies:
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_distraction_words
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_feedback_if_correct
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_feedback_if_wrong
+    - field.field.lms_activity.fill_in_the_blanks_feedback.field_image
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_question_text
+    - field.field.lms_activity.fill_in_the_blanks_feedback.layout_builder__layout
+    - image.style.thumbnail
     - lms.lms_activity_type.fill_in_the_blanks_feedback
   module:
+    - image
     - text
 _core:
   default_config_hash: olD6l-HR3jsto40emrxikr0BJWM9G8vc0M8TFUECZrY
@@ -41,6 +45,14 @@ content:
       rows: 3
       placeholder: 'Feedback for an incorrect or incomplete answer.'
     third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_question_text:
     type: text_textarea
     weight: 1
@@ -48,6 +60,12 @@ content:
     settings:
       rows: 5
       placeholder: 'Enter the text with correct answers in [brackets].'
+    third_party_settings: {  }
+  focus_mode:
+    type: options_buttons
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   name:
     type: string_textfield
@@ -66,4 +84,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  layout_builder__layout: true
   uid: true

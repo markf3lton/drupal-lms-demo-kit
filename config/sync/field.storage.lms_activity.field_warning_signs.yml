@@ -1,0 +1,21 @@
+uuid: 91003082-197e-4ec0-b083-c4ff839cbd7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lms
+id: lms_activity.field_warning_signs
+field_name: field_warning_signs
+entity_type: lms_activity
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

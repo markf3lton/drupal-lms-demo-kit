@@ -6,8 +6,42 @@ dependencies:
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_distraction_words
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_feedback_if_correct
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_feedback_if_wrong
+    - field.field.lms_activity.fill_in_the_blanks_feedback.field_image
     - field.field.lms_activity.fill_in_the_blanks_feedback.field_question_text
     - lms.lms_activity_type.fill_in_the_blanks_feedback
+  module:
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          5fd3e36d-ea42-4a2a-a071-d1eaee57f56a:
+            uuid: 5fd3e36d-ea42-4a2a-a071-d1eaee57f56a
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:fill_in_the_blanks_feedback:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: BpF8VCkh2Rh2F-kfawYCEcWqHS85_akuWjgg6AkGU-o
 id: lms_activity.fill_in_the_blanks_feedback.default
@@ -16,9 +50,11 @@ bundle: fill_in_the_blanks_feedback
 mode: default
 content: {  }
 hidden:
+  answer_form: true
   field_distraction_words: true
   field_feedback_if_correct: true
   field_feedback_if_wrong: true
   field_question_text: true
   name: true
   uid: true
+  field_image: true

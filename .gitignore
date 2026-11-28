@@ -50,3 +50,6 @@ web/themes/contrib/
 web/libraries/
 web/sites/default/files/
 web/core/
+
+# lrs_xapi writes request logs, including session cookies
+/web/requests.txt

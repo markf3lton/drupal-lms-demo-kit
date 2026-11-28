@@ -1,0 +1,21 @@
+uuid: 6d751b4e-b04a-418e-b537-00dd3be09f5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.layout_builder__layout
+    - lms.lms_activity_type.no_answer
+  module:
+    - layout_builder
+id: lms_activity.no_answer.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: lms_activity
+bundle: no_answer
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: layout_section

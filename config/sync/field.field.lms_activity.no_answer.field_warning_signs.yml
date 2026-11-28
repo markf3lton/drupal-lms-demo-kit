@@ -1,0 +1,19 @@
+uuid: e22365c3-48f4-41e6-88d8-2bb9c932e916
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.field_warning_signs
+    - lms.lms_activity_type.no_answer
+id: lms_activity.no_answer.field_warning_signs
+field_name: field_warning_signs
+entity_type: lms_activity
+bundle: no_answer
+label: 'Warning signs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

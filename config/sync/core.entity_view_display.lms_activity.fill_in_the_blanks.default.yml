@@ -14,6 +14,7 @@ bundle: fill_in_the_blanks
 mode: default
 content: {  }
 hidden:
+  answer_form: true
   field_distraction_words: true
   field_question_text: true
   name: true

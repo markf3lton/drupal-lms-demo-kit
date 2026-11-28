@@ -1,0 +1,19 @@
+uuid: 3de42507-e6ea-4318-9842-12a1e9f86ca5
+langcode: en
+status: true
+dependencies:
+  module:
+    - layout_builder
+    - lms
+id: lms_activity.layout_builder__layout
+field_name: layout_builder__layout
+entity_type: lms_activity
+type: layout_section
+settings: {  }
+module: layout_builder
+locked: true
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

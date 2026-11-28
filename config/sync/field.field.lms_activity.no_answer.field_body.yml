@@ -1,0 +1,24 @@
+uuid: 22317e32-40a7-42a8-86b7-6567b2337de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.lms_activity.field_body
+    - filter.format.basic_html
+    - lms.lms_activity_type.no_answer
+  module:
+    - text
+id: lms_activity.no_answer.field_body
+field_name: field_body
+entity_type: lms_activity
+bundle: no_answer
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

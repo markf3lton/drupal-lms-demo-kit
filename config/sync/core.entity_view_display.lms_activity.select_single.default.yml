@@ -4,10 +4,59 @@ status: true
 dependencies:
   config:
     - field.field.lms_activity.select_single.answers
+    - field.field.lms_activity.select_single.field_image
+    - field.field.lms_activity.select_single.layout_builder__layout
     - field.field.lms_activity.select_single.question
     - lms.lms_activity_type.select_single
   module:
-    - text
+    - image
+    - layout_builder
+    - layout_discovery
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          2e41febb-2c82-40e4-8471-2352288229c4:
+            uuid: 2e41febb-2c82-40e4-8471-2352288229c4
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:select_single:question'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          ea2be358-d959-49b3-b4a5-2779448d22ef:
+            uuid: ea2be358-d959-49b3-b4a5-2779448d22ef
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:select_single:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: rrBz--o75At9xlVS0uBoWffgwAwyv3jZiK9HB7l_UPU
 id: lms_activity.select_single.default
@@ -15,14 +64,21 @@ targetEntityType: lms_activity
 bundle: select_single
 mode: default
 content:
-  question:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  answer_form: true
   answers: true
+  layout_builder__layout: true
   name: true
+  question: true
   uid: true

@@ -4,9 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.lms_activity.select_single.answers
+    - field.field.lms_activity.select_single.field_image
+    - field.field.lms_activity.select_single.layout_builder__layout
     - field.field.lms_activity.select_single.question
+    - image.style.thumbnail
     - lms.lms_activity_type.select_single
   module:
+    - image
     - lms_answer_plugins
     - text
 _core:
@@ -19,6 +23,20 @@ content:
   answers:
     type: lms_answer
     weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 27
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  focus_mode:
+    type: options_buttons
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -47,4 +65,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  layout_builder__layout: true
   uid: true

@@ -3,13 +3,15 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.lms_activity.no_answer.field_body
     - field.field.lms_activity.no_answer.field_image
     - field.field.lms_activity.no_answer.field_information
-    - image.style.wide
+    - field.field.lms_activity.no_answer.field_warning_signs
+    - field.field.lms_activity.no_answer.layout_builder__layout
     - lms.lms_activity_type.no_answer
   module:
-    - image
     - layout_builder
+    - layout_discovery
     - text
 third_party_settings:
   layout_builder:
@@ -55,15 +57,64 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 1
             additional: {  }
+          7d34a8c1-609a-4b88-b38d-35c6267d2b5d:
+            uuid: 7d34a8c1-609a-4b88-b38d-35c6267d2b5d
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:no_answer:field_warning_signs'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                  link_rel: canonical
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          282d6ce2-db78-4f69-b62c-35ba6889a948:
+            uuid: 282d6ce2-db78-4f69-b62c-35ba6889a948
+            region: content
+            configuration:
+              id: 'field_block:lms_activity:no_answer:field_body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 id: lms_activity.no_answer.default
 targetEntityType: lms_activity
 bundle: no_answer
 mode: default
-content: {  }
+content:
+  field_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_warning_signs:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   answer_form: true
-  name: true
-  uid: true
   field_image: true
   field_information: true
+  layout_builder__layout: true
+  name: true
+  uid: true

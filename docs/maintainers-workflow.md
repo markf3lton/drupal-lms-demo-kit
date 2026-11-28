@@ -100,7 +100,7 @@ ddev drush config:export -y
 ddev drush user:information --uid=1          # check for real email/password
 ddev drush user:password admin "$(openssl rand -base64 32)"   # random, never the demo password
 ddev drush sql:query "TRUNCATE sessions;"    # clear live sessions (see note)
-ddev drush sql:dump --structure-tables-key=common | gzip > .tugboat/database.sql.gz
+ddev drush sql:dump --structure-tables-list='cache*,history,search_*,sessions,watchdog,key_value_expire' | gzip > .tugboat/database.sql.gz
 
 
 # 3. Snapshot the new baseline
@@ -111,7 +111,7 @@ git add config/sync .tugboat/database.sql.gz
 git commit -m "Refresh demo baseline: <what changed>"
 ```
 
-The `--structure-tables-key=common` dump keeps the schema for the transient tables — sessions, cache*, watchdog, search_*, history — but drops their rows. Smaller dump, and no session rows to go stale that might cause `drush uli` errors.
+The `--structure-tables-list` dump keeps the schema for the transient tables — cache*, history, search_*, sessions, watchdog, key_value_expire — but drops their rows. Smaller dump, no stale session rows that might cause `drush uli` errors, and no log or cache noise from your local work. It names the tables outright because `--structure-tables-key=common` only works if a `drush/drush.yml` defines that key, and this repo has none, so drush ignored it and dumped everything.
 
 Do this rarely. Code and config reach previews without a new dump (see Tugboat below); only changes to demo content, users, or enrollments need one.
 

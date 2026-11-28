@@ -21,6 +21,7 @@ This page covers only what's specific to this kit. For everything else refer to 
 
 - **Database settings via symlink.** Drupal needs Tugboat's database credentials. `init` symlinks `.tugboat/settings.tugboat.php` to `web/sites/default/settings.local.php`, which the stock `settings.php` includes if present. Hosting concerns stay in the hosting config.
 - **Seeded database when available.** `update` drops any existing tables and imports `.tugboat/database.sql.gz` if it exists, so previews boot with demo users, courses, and rosters in place, and a Refresh (including the nightly base preview refresh) resets any demo activity.
+- **Demo course images.** The seed refers to the demo course's four images by path, but uploads aren't in git, so `build` copies `file/*.png` out of `assets/courses/demo_phishing.zip` into `files/2026-11/`. The folder name is the month the course was imported; if you re-seed from a later import, update that one line in the config.
 - **From-config fallback.** On branches without a database dump, `build` detects the missing install and runs `site:install --existing-config` instead.
 - **No usable user 1 password.** `build` gives user 1 a new random password that nobody knows. The demo accounts in the README are for visitors; the maintainer gets in with `drush uli` via `tugboat shell` (see below).
 
@@ -75,6 +76,8 @@ services:
             echo "No database dump found - site will be installed from config during build."
           fi
       build:
+        # PHP zip extension for lms_yaml course imports (ZipArchive). In build, not init, so previews cloned from an older base preview get it too.
+        - php -m | grep -qx zip || (apt-get update && apt-get install -y libzip-dev && docker-php-ext-install zip)
         - composer install --optimize-autoloader
         - |
           if vendor/bin/drush status --field=bootstrap 2>/dev/null | grep -q Successful; then
@@ -86,6 +89,14 @@ services:
         # User 1 gets an unknown random password on every build; log in with drush uli via tugboat shell.
         - vendor/bin/drush php:eval '$u = \Drupal\user\Entity\User::load(1); $u->setPassword(\Drupal\Component\Utility\Crypt::randomBytesBase64(32)); $u->save();'
         - vendor/bin/drush cache:rebuild
+        # Apache runs as www-data and must be able to write public files.
+        - mkdir -p "${TUGBOAT_ROOT}/web/sites/default/files"
+        # Restore the demo course images the seeded database references; folder and names must match its file_managed URIs.
+        - |
+          IMAGE_DIR="${TUGBOAT_ROOT}/web/sites/default/files/2026-11"
+          mkdir -p "$IMAGE_DIR"
+          php -r '$z = new ZipArchive(); if ($z->open($argv[1]) !== TRUE) { exit(1); } for ($i = 0; $i < $z->numFiles; $i++) { $n = $z->getNameIndex($i); if (preg_match("#^file/([^/]+\.png)$#", $n, $m)) { copy("zip://" . $argv[1] . "#" . $n, $argv[2] . "/" . $m[1]); } }' "${TUGBOAT_ROOT}/assets/courses/demo_phishing.zip" "$IMAGE_DIR"
+        - chown -R www-data:www-data "${TUGBOAT_ROOT}/web/sites/default/files"
 ```
 
 And `.tugboat/settings.tugboat.php` (all values are Tugboat's standard non-secrets; the hash salt derives from the repo ID):
